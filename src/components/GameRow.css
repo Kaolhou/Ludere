@@ -1,0 +1,22 @@
+@charset "utf-8";
+
+div.gameRow--listarea{
+    display:flex;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background-color:aquamarine;
+}
+div.gameRow--itemarea{
+    transition: .4s;
+    z-index: 1;
+    margin: 20px;
+}
+div.gameRow--itemarea:hover{
+    transition:.4s;
+	transform: scale(1.06);
+	cursor:pointer;
+
+}
+div.image{
+
+}
