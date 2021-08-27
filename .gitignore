@@ -24,3 +24,4 @@ yarn-error.log*
 
 #extras gitignore
 config.json
+/public/index.html

@@ -15,8 +15,13 @@ div.gameRow--itemarea:hover{
     transition:.4s;
 	transform: scale(1.06);
 	cursor:pointer;
-
+    z-index: 2;
 }
-div.image{
-
+div.image img, a.gameRow--itemLink{
+    width: 500px;
+    position: relative;
+    clip: rect(0px,10px,360px,0px);
 }
+/*div.image{
+
+}*/
