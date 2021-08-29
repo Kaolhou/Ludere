@@ -32,7 +32,7 @@ nav#menu{
   background-color: #333;
   text-align: center;
 }
-  
+    
 nav#menu ul a{
   text-decoration: none;
   background-color: #333;
@@ -40,13 +40,14 @@ nav#menu ul a{
   padding: 20px;
   margin-top: 10px;
   transition: .3s;
+  color: #fff;
 }
 nav#menu ul a:hover{
   background-color: darkcyan;
   transition: .3s;
 
 }
-nav#meu li, nav#menu a{
+nav#menu li{
   list-style: none;
   display: inline;
   color: #fff;
