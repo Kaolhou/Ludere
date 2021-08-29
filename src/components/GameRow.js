@@ -8,10 +8,10 @@ export default ({title, item})=>{
             <h2>{title}</h2>
             <div className="gameRow--listarea">
                 {item.results.length > 0 && item.results.map((item, key) =>(
-                    <a href={`games?id=${item.id}`} key={key}>
+                    <a href={`games?id=${item.id}`} key={key} className="gameRow--itemLink">
                         <div className="gameRow--itemarea" key={key}>
                             <h3>{item.name}</h3>
-                            <h4>{item.id}</h4>
+                            {/*<h4>{item.id}</h4>*/}
                             <div className="image">
                                 <img src={`${item.background_image}`} alt={`${item.name}`}/>
                             </div>

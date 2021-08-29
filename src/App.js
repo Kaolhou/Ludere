@@ -1,4 +1,5 @@
 //bibliotecas
+import {useEffect/*, useState*/} from 'react';
 import './stylesheets/App.css';
 //import gmdb from './gmdb';
 import {
@@ -9,37 +10,48 @@ import {
   useRouteMatch,
   useParams*/
 } from "react-router-dom";
+import Games from "./modules/games"
+import Footer from "./modules/footer"
+import About from "./modules/about"
+import Home from "./modules/home"
+import './stylesheets/index.css'
 
 
 function App() {
+  useEffect(() => {
+    document.title = "Portal Abstract"
+  }, [])
   return (
-    <Router>
-      <div>
-        <ul>
-          <li>
-            <Link to="/">Início</Link>
-          </li>
-          <li>
-            <Link to="/games">Jogos</Link>
-          </li>
-          <li>
-            <Link to="/about">Sobre</Link>
-          </li>
-        </ul>
-
-        <Switch>
-          <Route path="/about">
-            oi
-          </Route>
-          <Route path="/games">
-            alo
-          </Route>
-          <Route path="/">
-            sla
-          </Route>
-        </Switch>
-      </div>
-    </Router>
+    <div>
+      <Router>
+        <nav id="menu">
+          <ul>
+            <li>
+              <Link to="/">Início</Link>
+            </li>
+            <li>
+              <Link to="/games">Jogos</Link>
+            </li>
+            <li>
+              <Link to="/about">Sobre</Link>
+            </li>
+          </ul>
+          </nav>
+          <Switch>
+            <Route path="/about">
+              <About />
+            </Route>
+            <Route path="/games">
+              <Games />
+            </Route>
+            <Route path="/">
+              <Home />
+            </Route>
+          </Switch>
+        
+      </Router>
+      <Footer />
+    </div>
   );
 }
 
