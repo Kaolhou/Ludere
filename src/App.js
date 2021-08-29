@@ -1,4 +1,5 @@
 //bibliotecas
+import {useEffect/*, useState*/} from 'react';
 import './stylesheets/App.css';
 //import gmdb from './gmdb';
 import {
@@ -10,14 +11,20 @@ import {
   useParams*/
 } from "react-router-dom";
 import Games from "./modules/games"
-import footer from "./modules/footer"
+import Footer from "./modules/footer"
+import About from "./modules/about"
+import Home from "./modules/home"
+import './stylesheets/index.css'
 
 
 function App() {
+  useEffect(() => {
+    document.title = "Portal Abstract"
+  }, [])
   return (
     <div>
       <Router>
-        <div>
+        <nav id="menu">
           <ul>
             <li>
               <Link to="/">Início</Link>
@@ -29,21 +36,21 @@ function App() {
               <Link to="/about">Sobre</Link>
             </li>
           </ul>
-
+          </nav>
           <Switch>
             <Route path="/about">
-              oi
+              <About />
             </Route>
             <Route path="/games">
               <Games />
             </Route>
             <Route path="/">
-              sla
+              <Home />
             </Route>
           </Switch>
-        </div>
+        
       </Router>
-      <footer />
+      <Footer />
     </div>
   );
 }

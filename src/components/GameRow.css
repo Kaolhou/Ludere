@@ -8,14 +8,22 @@ div.gameRow--listarea{
 }
 div.gameRow--itemarea{
     transition: .4s;
-    z-index: 1;
     margin: 20px;
+}
+div.gameRow--itemarea:hover img{
+    transition:.4s;
+	transform: scale(1.06);
+	cursor: pointer;
+    z-index: 23 !important;
+}
+div.image img{
+    transition: .4s;
 }
 div.gameRow--itemarea:hover{
     transition:.4s;
-	transform: scale(1.06);
-	cursor:pointer;
-    z-index: 2;
+	transform: scale(1.01);
+	cursor: pointer;
+    z-index: 23 !important;
 }
 div.image img, a.gameRow--itemLink{
     width: 500px;
