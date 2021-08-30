@@ -2,7 +2,7 @@
 
 div.gameRow--listarea{
     display:flex;
-    overflow-x: scroll;
+    overflow-x: hidden;
     overflow-y: hidden;
     background-color:aquamarine;
 }
