@@ -15,7 +15,12 @@ export default function (){
                 </ul>
             </div>
             <div>
-                po
+                Agradecimentos:
+                <ul>
+                    <li>Etec Parque Belém</li>
+                    <li>Todos os Professores que <br />moldaram nosso conhecimento</li>
+                    <li>Rawg.Io</li>
+                </ul>
             </div>
         </div>
     )

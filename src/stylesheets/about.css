@@ -18,7 +18,7 @@ div.imgs{
 }
 .container .card{
     border-radius: 7px;
-    max-width: 300px;
+    width: 300px;
     height: 215px;
     position: relative;
     background: #a7a7a7;
@@ -64,4 +64,7 @@ div.imgs{
 div.content p{
     text-align: left;
     margin: 12px 0;
+}
+a.icon{
+    margin: 5px;
 }
