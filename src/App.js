@@ -37,17 +37,20 @@ function App() {
             </li>
           </ul>
           </nav>
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/games">
-              <Games />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
+
+          <div id="body">
+            <Switch>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/games">
+                <Games />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </div>
         
       </Router>
       <Footer />

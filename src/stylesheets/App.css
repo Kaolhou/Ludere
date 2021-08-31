@@ -9,6 +9,7 @@ body{
   font-family: "Roboto";
   margin: 0;
   padding: 0;
+  overflow-x: hidden;
 }
 
 /*teste menu*/
@@ -55,4 +56,12 @@ nav#menu li{
   text-transform: uppercase;
   font-weight: bold;
   justify-content: center;
+}
+div#body{
+  padding: 0 100px;
+}
+@media screen and (max-width: 411px){
+  div#body{
+    padding: 0 10px;
+  }
 }

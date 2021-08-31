@@ -42,12 +42,12 @@ export default{
             {
                 slug : "adventure",
                 name : "Aventura",
-                items: await basicFetch(`/games?key=${API_KEY}&genres=${search.adventure}&page_size=10`)
+                items: await basicFetch(`/games?key=${API_KEY}&genres=${search.adventure}&page_size=10&page=3`)
             },
             {
                 slug : "shooter",
                 name : "Tiro",
-                items: await basicFetch(`/games?key=${API_KEY}&genres=${search.shooter}&page_size=10`)
+                items: await basicFetch(`/games?key=${API_KEY}&genres=${search.shooter}&page_size=10&page=2`)
             },
         ]
     }

@@ -1,5 +1,5 @@
 import React from 'react';
-import './GameRow.css'
+import './GameRow.css';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ({title, item})=>{
@@ -10,10 +10,11 @@ export default ({title, item})=>{
                 {item.results.length > 0 && item.results.map((item, key) =>(
                     <a href={`games?id=${item.id}`} key={key} className="gameRow--itemLink">
                         <div className="gameRow--itemarea" key={key}>
-                            <h3>{item.name}</h3>
+                            {/*<h3>{item.name}</h3>*/}
                             {/*<h4>{item.id}</h4>*/}
                             <div className="image">
                                 <img src={`${item.background_image}`} alt={`${item.name}`}/>
+                                <span className="title">{item.name}</span>
                             </div>
                         </div>
                     </a>
