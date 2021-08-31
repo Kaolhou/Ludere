@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react';
 import gmdb from '../gmdb'
 import GameRow from '../components/GameRow';
 import "../stylesheets/games.css"
+import load from '../img/home/load.gif'
 //módulo
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ()=>{
@@ -30,7 +31,7 @@ export default ()=>{
       </section>
       {gameList.length <= 0 &&
         <div className="loading">
-          <img src="https://pbs.twimg.com/profile_images/1299064083300470787/aSjHSvCZ_400x400.jpg" alt="laitoba" />
+          <img src={load} alt="laitoba" />
         </div>        
       }
     </div>

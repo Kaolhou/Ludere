@@ -68,3 +68,15 @@ div.content p{
 a.icon{
     margin: 5px;
 }
+.loading{
+    bottom: 0;
+    right: 0;
+    top: 0;
+    left: 0;
+    position: fixed;
+    z-index: 99;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-color:#000;
+}

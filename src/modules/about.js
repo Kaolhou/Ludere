@@ -1,5 +1,6 @@
 //bibliotecas
 import "../stylesheets/about.css"
+import load from "../img/home/load.gif"
 import andre from "../img/profile/andre.jpg"
 import jonas from "../img/profile/jonas.png"
 import bruno from "../img/profile/bruno.jpg"
@@ -10,8 +11,14 @@ import twittericon from "../img/icons/twitter128128.svg"
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (){
+    const nomes = [andre, jonas, bruno]
     return(
         <div className="main">
+            {nomes.length <= 0 &&
+                    <div className="loading">
+                        <img src={load} alt="laitoba" />
+                    </div>        
+                }
             <div className="imgs">
                 <div className="container">
                     <div className="card">
@@ -153,6 +160,7 @@ export default function (){
                         </div>
                     </div>
                 </div>
+                
             </div>
         </div>
     )
