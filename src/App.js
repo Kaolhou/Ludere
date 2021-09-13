@@ -16,7 +16,6 @@ import About from "./modules/about"
 import Home from "./modules/home"
 import './stylesheets/index.css'
 
-
 function App() {
   useEffect(() => {
     document.title = "Portal Abstract"
@@ -51,7 +50,7 @@ function App() {
               </Route>
             </Switch>
           </div>
-        
+        <hr className="foot"/>
       </Router>
       <Footer />
     </div>

@@ -50,5 +50,10 @@ export default{
                 items: await basicFetch(`/games?key=${API_KEY}&genres=${search.shooter}&page_size=10&page=2`)
             },
         ]
+    },
+    getGameInfo: async (id) => {
+        return(
+            await basicFetch(`/games/${id}?key=${API_KEY}`)
+        )
     }
 }

@@ -10,8 +10,6 @@ export default ({title, item})=>{
                 {item.results.length > 0 && item.results.map((item, key) =>(
                     <a href={`games?id=${item.id}`} key={key} className="gameRow--itemLink">
                         <div className="gameRow--itemarea" key={key}>
-                            {/*<h3>{item.name}</h3>*/}
-                            {/*<h4>{item.id}</h4>*/}
                             <div className="image">
                                 <img src={`${item.background_image}`} alt={`${item.name}`}/>
                                 <span className="title">{item.name}</span>

@@ -4,6 +4,7 @@ import load from "../img/home/load.gif"
 import andre from "../img/profile/andre.jpg"
 import jonas from "../img/profile/jonas.png"
 import bruno from "../img/profile/bruno.jpg"
+import marco from "../img/profile/marco.jpeg"
 import faceicon from "../img/icons/face128128.svg"
 import githubicon from "../img/icons/github128128.svg"
 import instaicon from "../img/icons/insta128128.svg"
@@ -141,7 +142,7 @@ export default function (){
                 <div className="container">
                     <div className="card">
                         <div className="imgBox">
-                            <img src={andre} alt="aoba" className="person"/>
+                            <img src={marco} alt="aoba" className="person"/>
                         </div>
                         <div className="content">
                         <h2>Marco Antônio Romagnoli Leme</h2>
@@ -160,7 +161,6 @@ export default function (){
                         </div>
                     </div>
                 </div>
-                
             </div>
         </div>
     )
