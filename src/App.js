@@ -16,7 +16,6 @@ import About from "./modules/about"
 import Home from "./modules/home"
 import './stylesheets/index.css'
 
-
 function App() {
   useEffect(() => {
     document.title = "Portal Abstract"
@@ -37,18 +36,21 @@ function App() {
             </li>
           </ul>
           </nav>
-          <Switch>
-            <Route path="/about">
-              <About />
-            </Route>
-            <Route path="/games">
-              <Games />
-            </Route>
-            <Route path="/">
-              <Home />
-            </Route>
-          </Switch>
-        
+
+          <div id="body">
+            <Switch>
+              <Route path="/about">
+                <About />
+              </Route>
+              <Route path="/games">
+                <Games />
+              </Route>
+              <Route path="/">
+                <Home />
+              </Route>
+            </Switch>
+          </div>
+        <hr className="foot"/>
       </Router>
       <Footer />
     </div>
