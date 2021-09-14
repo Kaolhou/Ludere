@@ -4,7 +4,9 @@ import load from "../img/home/load.gif"
 import andre from "../img/profile/andre.jpg"
 import jonas from "../img/profile/jonas.png"
 import bruno from "../img/profile/bruno.jpg"
-import marco from "../img/profile/marco.jpeg"
+import marco from "../img/profile/MarcoR.jpg"
+import leandro from "../img/profile/leandro.jpg"
+import kaio from "../img/profile/kaio.jpg"
 import faceicon from "../img/icons/face128128.svg"
 import githubicon from "../img/icons/github128128.svg"
 import instaicon from "../img/icons/insta128128.svg"
@@ -95,7 +97,7 @@ export default function (){
                 <div className="container">
                     <div className="card">
                         <div className="imgBox">
-                            <img src={andre} alt="aoba" className="person"/>
+                            <img src={kaio} alt="aoba" className="person"/>
                         </div>
                         <div className="content">
                         <h2>Kaio Pereira Araújo</h2>
@@ -120,7 +122,7 @@ export default function (){
                 <div className="container">
                     <div className="card">
                         <div className="imgBox">
-                            <img src={andre} alt="aoba" className="person"/>
+                            <img src={leandro} alt="aoba" className="person"/>
                         </div>
                         <div className="content">
                         <h2>Leandro Reis Santana</h2>

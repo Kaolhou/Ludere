@@ -46,7 +46,9 @@ function App() {
                 <Games />
               </Route>
               <Route path="/">
-                <Home />
+                <div id="innerface">
+                  <Home />
+                </div>
               </Route>
             </Switch>
           </div>
