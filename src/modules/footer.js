@@ -14,12 +14,12 @@ export default function (){
                     <li>Marco Antônio Romagnoli Leme</li>
                 </ul>
             </div>
-            <div>
+            <div id="agrade">
                 Agradecimentos:
                 <ul>
                     <li>Etec Parque Belém</li>
                     <li>Todos os Professores que <br />moldaram nosso conhecimento</li>
-                    <li>Rawg.Io</li>
+                    <li><a href="https://rawg.io" target="_blank" rel="noreferrer">Rawg.Io</a></li>
                 </ul>
             </div>
         </div>

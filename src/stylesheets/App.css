@@ -57,11 +57,14 @@ nav#menu li{
   font-weight: bold;
   justify-content: center;
 }
-div#innerface{
+div.innerface{
   padding: 0 100px;
 }
 @media screen and (max-width: 411px){
-  div#body{
-    padding: 0 10px;
+  div.innerface{
+    padding: 0 20px;
+  }
+  div#footer{
+    padding: 20px 20px;
   }
 }

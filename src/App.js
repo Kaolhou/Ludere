@@ -43,10 +43,12 @@ function App() {
                 <About />
               </Route>
               <Route path="/games">
-                <Games />
+                <div className="innerface">
+                  <Games />
+                </div>
               </Route>
               <Route path="/">
-                <div id="innerface">
+                <div className="innerface">
                   <Home />
                 </div>
               </Route>

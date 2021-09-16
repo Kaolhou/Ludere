@@ -27,7 +27,7 @@ export default ()=>{
     useEffect(()=>{
       const loadAll = async () =>{
         let list = await gmdb.getHomeList() 
-        console.log(list)
+        //console.log(list)
         setGameList(list)
         
       }
@@ -37,7 +37,7 @@ export default ()=>{
       <div className="page">
         <section className="lists">
           {gameList.map((item, key) => (
-              <GameRow key={key} title={item.name} item={item.items}/>
+              <GameRow key={key} title={item.name} item={item.items} fcla={item.slug}/>
           ))}
         </section>
         {gameList.length <= 0 &&
@@ -51,7 +51,7 @@ export default ()=>{
     useEffect(()=>{
       const loadOne = async () =>{
         let listG = await gmdb.getGameInfo(id)
-        console.log(listG)
+        //console.log(listG)
         setGameUni(listG);
       }
       loadOne()

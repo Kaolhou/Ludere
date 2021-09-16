@@ -5,3 +5,16 @@ div#footer{
     display: flex;
     justify-content: space-between;
 }
+div#footer > div#agrade > ul > li > a{
+    color: #fff;
+    transition: .2s;
+    text-decoration: none;
+}
+div#footer > div#agrade > ul > li > a:hover{
+    color:blue;transition: .2s;
+}
+@media screen and (max-width: 632px){
+    div#footer{
+      padding: 20px 20px;
+    }
+  }

@@ -1,48 +1,23 @@
 @charset "utf-8";
 
-div.gameRow--listarea{
+.gameRow--left,
+.gameRow--right{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #00000099;
+    padding:10px;
+    z-index: 99;
     display:flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    background-color: #111;
-    height: calc()
-    
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 7%;
 }
-div.image img{
-    height: 250px;
-    position: relative;
-    top: -50%;
-    left: -50%;
-
+.gameRow--right{
+    right: 20px;
 }
-div.gameRow--itemarea{
-    transition: .4s;
-    overflow: hidden;
-    border-radius: 7px;
-    height: 250px;
-    width: 250px;
-    transform: scale(0.9);
-}
-div.gameRow--itemarea:hover{
-    transform: scale(1);
-}
-/*div.gameRow--itemarea:hover img{
-    transition:.4s;
-	transform: scale(1.06);
-	cursor: pointer;
-    z-index: 23 !important;
-}*/
-div.image img{
-    transition: .4s;
-}
-span.title{
-    margin-top: -50px;
-    position:fixed;
-    opacity: 0;
-    color: aqua;
-    transition: .4s;
-}
-div.gameRow--itemarea:hover span.title{
-    opacity: 1;
-    transition: .4s;
+.gameRow--left{
+    left: 20px;
 }
