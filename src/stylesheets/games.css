@@ -18,16 +18,13 @@ div.gameRow--listarea{
     overflow-x: hidden;
     overflow-y: hidden;
     background-color: #111;
-    height: calc();
-    transition: .3s ease-in-out;
-    
+    transition: .5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 div.image img{
     height: 250px;
     position: relative;
     top: -50%;
     left: -60%;
-
 }
 div.gameRow--itemarea{
     transition: .4s;
@@ -53,6 +50,9 @@ span.title{
 div.gameRow--itemarea:hover span.title{
     opacity: 1;
     transition: .4s;
+}
+.uniImg{
+    width:500px;
 }
 @media screen and (max-width: 750px){
     div.gameRow--itemarea{

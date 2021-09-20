@@ -60,6 +60,10 @@ nav#menu li{
 div.innerface{
   padding: 0 100px;
 }
+
+div > p{
+  width: 500px;
+}
 @media screen and (max-width: 411px){
   div.innerface{
     padding: 0 20px;
