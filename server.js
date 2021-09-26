@@ -2,6 +2,7 @@
 const express = require('express');
 const app = express();
 const port = 5000;
+const axios = require('axios');
 
 //dotenv init
 require('dotenv').config()
@@ -9,8 +10,6 @@ require('dotenv').config()
 //api bases
 const API_KEY = process.env.KEY;
 const API_BASE = 'https://api.rawg.io/api';
-
-const api = require('./api/api');
 
 //search base data
 const search = {
@@ -20,25 +19,48 @@ const search = {
     "indie": "51",
     "adventure": "3"
 }
-const basicFetch = async (endpoint) =>{
-    const req = await fetch(`${API_BASE}${endpoint}`);
-    const json = await req.json();
-    //console.log(req)
-    return json;
-}
-
-//server.use(express.json())
 
 app.get('/games', async (req, res)=>{
+    const prom = [
+        {
+            slug : "rpg",
+            name : "RPG",
+            items: await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.rpg}&ordering=-added&page_size=10`)
+        },
+        {
+            slug : "action",
+            name : "Ação",
+            items: await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.action}&page_size=10`)
+        },
+        {
+            slug : "indie",
+            name : "Indie",
+            items: await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.indie}&page_size=10`)
+        },
+        {
+            slug : "adventure",
+            name : "Aventura",
+            items: await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.adventure}&page_size=10&page=3`)
+        },
+        {
+            slug : "shooter",
+            name : "Tiro",
+            items: await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.shooter}&page_size=10&page=2`)
+        }
+    ]
+    
     try {
-        const aoba = await api.get('')
-        return aoba
+        //console.log(prom[0].items.data)
+        for(let i in prom){
+            console.log("-------------------------------")
+            console.log(prom[i].items.data)
+        }
     } catch (error) {
-        console.log(error)
+        console.error(error)
     }
 })
 
 app.listen(port, ()=>{
     console.log(`server started at port ${port}`);
-    console.log(API_KEY)
+    //console.log(API_KEY)
 })
