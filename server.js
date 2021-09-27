@@ -48,14 +48,17 @@ app.get('/games', async (req, res)=>{
             items: await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.shooter}&page_size=10&page=2`)
         }
     ]
-    
+    //JSON.stringify(prom)
     try {
+        let games = []
         //console.log(prom[0].items.data)
         for(let i in prom){
-            console.log("-------------------------------")
-            console.log(prom[i].items.data)
+            games.push(prom[i].items.data)
         }
+        res.send(games)
+        //res.send(prom)
     } catch (error) {
+        res.send(error)
         console.error(error)
     }
 })
