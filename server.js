@@ -20,50 +20,57 @@ const search = {
     "adventure": "3"
 }
 
+
 app.get('/games', async (req, res)=>{
-    const prom = [
+    const resu = {
+        "rpg": await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.rpg}&ordering=-added&page_size=10`),
+        "action": await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.action}&page_size=10`),
+        "indie": await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.indie}&page_size=10`),
+        "adventure": await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.adventure}&page_size=10&page=3`),
+        "shoot": await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.shooter}&page_size=10&page=2`)
+    }
+    const games = [
         {
             slug : "rpg",
             name : "RPG",
-            items: await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.rpg}&ordering=-added&page_size=10`)
+            items: resu.rpg.data
         },
         {
             slug : "action",
             name : "Ação",
-            items: await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.action}&page_size=10`)
+            items: resu.action.data
         },
         {
             slug : "indie",
             name : "Indie",
-            items: await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.indie}&page_size=10`)
+            items: resu.indie.data
         },
         {
             slug : "adventure",
             name : "Aventura",
-            items: await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.adventure}&page_size=10&page=3`)
+            items: resu.adventure.data
         },
         {
             slug : "shooter",
             name : "Tiro",
-            items: await axios(`${API_BASE}/games?key=${API_KEY}&genres=${search.shooter}&page_size=10&page=2`)
+            items: resu.shoot.data
         }
     ]
-    //JSON.stringify(prom)
     try {
-        let games = []
-        //console.log(prom[0].items.data)
-        for(let i in prom){
-            games.push(prom[i].items.data)
-        }
         res.send(games)
-        //res.send(prom)
     } catch (error) {
         res.send(error)
         console.error(error)
     }
 })
 
+app.get('/game/:id', async(req, res)=>{
+    const id = req.params.id
+    let game = await axios(`${API_BASE}/games/${id}?key=${API_KEY}`)
+    res.send(game)
+    console.log(game)
+})
+
 app.listen(port, ()=>{
     console.log(`server started at port ${port}`);
-    //console.log(API_KEY)
 })

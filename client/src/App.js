@@ -1,5 +1,5 @@
 import './App.css';
-import './components/local/local'
+import './stylesheets/index.css'
 /*import Games from "./modules/games"
 import Footer from "./modules/footer"
 import About from "./modules/about"
@@ -19,11 +19,10 @@ import Home from "./modules/home"
 
 function App() {
   return (
-    <>
-      <div>
+    <div id="appinter">
       <Router>
         <nav id="menu">
-          <ul>
+          <ul id="nav">
             <li>
               <Link to="/" className="links">Início</Link>
             </li>
@@ -57,7 +56,6 @@ function App() {
       </Router>
       <Footer />
     </div>
-    </>
   );
 }
 
