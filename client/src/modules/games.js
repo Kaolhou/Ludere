@@ -16,7 +16,8 @@ export default ()=>{
     console.log(id)
 
     const [gameList, setGameList] = useState([])
-    //const [gameUni, setGameUni] = useState([])
+    const [gameUni, setGameUni] = useState([])
+    const [avaLocal, setAvaLocal] = useState([])
 
     if(args === game){
         useEffect(()=>{
@@ -25,7 +26,6 @@ export default ()=>{
                     let prom = await fetch('/games')
                     var list = await prom.json()
                     setGameList(list)
-                    console.log(list)
                 } catch (error) {
                     console.error(error)
                 }
@@ -49,9 +49,29 @@ export default ()=>{
             </div>
         )
     }else{
+        useEffect(()=>{
+            const loadAll = async ()=>{
+                try {
+                    //api data
+                    const promG = await fetch(`/game/${id}`)
+                    var listG = await promG.json()
+                    setGameUni(listG)
+                    
+                    //local data
+                    const promL = await fetch(`/local/${id}`)
+                    var listL = await promL.json()
+                    setAvaLocal(listL)
+                } catch (error) {
+                    console.error(error)
+                }
+            }
+            loadAll();
+        },[id])
+        
         return(
             <>
-                tchau
+                tchau{console.log(gameUni)}
+                {console.log(avaLocal[0])}
             </>
         )
     }

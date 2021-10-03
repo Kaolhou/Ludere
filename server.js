@@ -4,6 +4,10 @@ const app = express();
 const port = 5000;
 const axios = require('axios');
 
+//import database
+const db = require('./database/index.json')
+const dbgames = db.games;
+
 //dotenv init
 require('dotenv').config()
 
@@ -67,8 +71,15 @@ app.get('/games', async (req, res)=>{
 app.get('/game/:id', async(req, res)=>{
     const id = req.params.id
     let game = await axios(`${API_BASE}/games/${id}?key=${API_KEY}`)
-    res.send(game)
-    console.log(game)
+    res.send(game.data)
+})
+
+app.get('/local/:id', async(req,res)=>{
+    const id = req.params.id
+    let response = dbgames.filter((item)=>{
+        if(item.id === id) return item;
+    })
+    res.send(response)
 })
 
 app.listen(port, ()=>{
