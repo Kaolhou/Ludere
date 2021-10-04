@@ -1,0 +1,85 @@
+@charset "utf-8";
+
+@font-face {
+  font-family: Inter;
+  src: url("./fonts/Inter/Inter-Regular.ttf");
+}
+*{
+  font-family: Inter;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+  background-color: #222;
+  color: #fff;
+}
+
+nav#menu{
+  background-color: #111;
+}
+
+ul#nav{
+  margin: 0;
+  list-style:none;
+  height: 44px;
+  display: flex;
+  justify-content: space-evenly;
+  padding-left: 0;
+  overflow: hidden;
+}
+ul#nav li a{
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+  background-color: #111;
+  transition: .3s;
+  padding:20px;
+}
+ul#nav li a:hover{
+  background-color:darkcyan;
+  transition: .3s;
+}
+ul#nav li{
+  display: inline-block;
+  margin-top: 10px
+  
+}
+
+div.innerface, div#footer{
+  padding: 15px;
+}
+div.innerface{
+  text-align: justify;
+}
+
+div#footer > div#agrade > ul > li > a{
+  color: #fff;
+  transition: .2s;
+  text-decoration: none;
+}
+div#footer > div#agrade > ul > li > a:hover{
+  color:blue;transition: .2s;
+}
+
+@media screen and (min-width: 960px) {
+
+}
+@media screen and (min-width: 780px) {
+  ul#nav{
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 650px) {
+  div#footer{
+    padding: 20px 120px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+}
+@media screen and (max-width: 400px) {
+  .container{
+    transform: scale(0.7);
+  }
+}

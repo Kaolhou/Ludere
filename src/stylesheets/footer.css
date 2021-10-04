@@ -1,7 +1,0 @@
-@charset "utf-8";
-
-div#footer{
-    padding: 20px 120px;
-    display: flex;
-    justify-content: space-between;
-}
