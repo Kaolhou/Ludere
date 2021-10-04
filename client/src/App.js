@@ -1,9 +1,5 @@
 import './App.css';
 import './stylesheets/index.css'
-/*import Games from "./modules/games"
-import Footer from "./modules/footer"
-import About from "./modules/about"
-import Home from "./modules/home"*/
 import {
   BrowserRouter as Router,
   Switch,
