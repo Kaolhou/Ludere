@@ -27,3 +27,4 @@ yarn-error.log*
 config.json
 #/public/index.html
 /database
+/homework

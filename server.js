@@ -3,20 +3,22 @@ const express = require('express');
 const app = express();
 const port = 5000;
 const axios = require('axios');
+const bodyParser = require('body-parser');
+const db = require('./modules/database')
+const auth = require("./modules/auth")
+
 
 //dotenv init
 require('dotenv').config()
 
 //import database
-const db = require('./database/index.json')
-const dbgames = db.games;
+/*const db = require('./database/index.json')
+const dbgames = db.games;*/
 
 //sequelize
-const Sequelize = require('sequelize')
-const sequelize = new Sequelize('server', 'root', process.env.SERVER_PASS, {
-    host: "localhost",
-    dialect: "mysql"
-})
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
+
 
 //api bases
 const API_KEY = process.env.KEY;
@@ -82,18 +84,28 @@ app.get('/game/:id', async(req, res)=>{
 })
 
 app.get('/local/:id', async(req,res)=>{
-    sequelize.authenticate().then(()=>{
+    const id = req.params.id
+    db.sequelize.authenticate().then(()=>{
         console.log("conectado com sucesso")
     }).catch((err)=>{
         console.error(err)
     })
-    /*const id = req.params.id
-    let response = dbgames.filter((item)=>{
+    
+    /*let response = dbgames.filter((item)=>{
         if(item.id === id) return item;
     })
     res.send(response)*/
 })
 
+
+
+
+app.post('/admin',(req,res)=>{
+    res.send(auth(req.body.user, req.body.pass))
+    //console.log(req.body.user)
+})
+
 app.listen(port, ()=>{
     console.log(`server started at port ${port}`);
+    console.log(`http://localhost:${port}`)
 })
