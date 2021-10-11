@@ -5,7 +5,8 @@ const port = 5000;
 const axios = require('axios');
 const bodyParser = require('body-parser');
 const db = require('./modules/database')
-const auth = require("./modules/auth")
+const auth = require("./modules/auth");
+const { sequelize } = require('./modules/database');
 
 
 //dotenv init
@@ -100,9 +101,9 @@ app.get('/local/:id', async(req,res)=>{
 
 
 
-app.post('/admin',(req,res)=>{
-    res.send(auth(req.body.user, req.body.pass))
-    //console.log(req.body.user)
+app.post('/admin', async (req,res)=>{
+    res.send(await auth(req.body.user, req.body.pass))
+
 })
 
 app.listen(port, ()=>{
