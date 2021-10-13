@@ -60,7 +60,7 @@ export default ()=>{
                     //local data
                     const promL = await fetch(`/local/${id}`)
                     var listL = await promL.json()
-                    setAvaLocal(listL)
+                    setAvaLocal(listL[0])
                 } catch (error) {
                     console.error(error)
                 }
@@ -71,7 +71,7 @@ export default ()=>{
         return(
             <>
                 tchau{console.log(gameUni)}
-                {console.log(avaLocal[0])}
+                {console.log(avaLocal)}
             </>
         )
     }

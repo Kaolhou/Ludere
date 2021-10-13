@@ -4,10 +4,14 @@ const app = express();
 const port = 5000;
 const axios = require('axios');
 const bodyParser = require('body-parser');
+const handlebars = require('express-handlebars')
 const db = require('./modules/database')
 const auth = require("./modules/auth");
 const { sequelize } = require('./modules/database');
+const post = require('./modules/post')
 
+app.engine('handlebars', handlebars({dafaultLayout: 'main'}))
+app.set('view engine', 'handlebars')
 
 //dotenv init
 require('dotenv').config()
@@ -86,8 +90,13 @@ app.get('/game/:id', async(req, res)=>{
 
 app.get('/local/:id', async(req,res)=>{
     const id = req.params.id
-    db.sequelize.authenticate().then(()=>{
-        console.log("conectado com sucesso")
+    db.sequelize.authenticate().then(async()=>{
+        console.log(await post.findAll({
+            where: {id}
+        }))
+        res.send(await post.findAll({
+            where: {id}
+        }))
     }).catch((err)=>{
         console.error(err)
     })
@@ -99,11 +108,24 @@ app.get('/local/:id', async(req,res)=>{
 })
 
 
+app.post('/add', (req,res)=>{
 
+    try {
+        /*post.create({
+            id: 412,
+            descri: "é um jogo excelente, muito bom pt 2"
+        })*/
+    } catch (error) {
+        console.error(error)
+    }
+})
 
 app.post('/admin', async (req,res)=>{
-    res.send(await auth(req.body.user, req.body.pass))
-
+    if(await auth(req.body.user, req.body.pass)){
+        res.render('postman')
+    }else{
+        res.send('usuário ou senha incorretos')
+    }
 })
 
 app.listen(port, ()=>{
