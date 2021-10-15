@@ -7,7 +7,6 @@ const bodyParser = require('body-parser');
 const handlebars = require('express-handlebars')
 const db = require('./modules/database')
 const auth = require("./modules/auth");
-const { sequelize } = require('./modules/database');
 const post = require('./modules/post')
 
 app.engine('handlebars', handlebars({dafaultLayout: 'main'}))
@@ -91,20 +90,15 @@ app.get('/game/:id', async(req, res)=>{
 app.get('/local/:id', async(req,res)=>{
     const id = req.params.id
     db.sequelize.authenticate().then(async()=>{
-        console.log(await post.findAll({
+        /*console.log(await post.findAll({
             where: {id}
-        }))
+        }))*/
         res.send(await post.findAll({
             where: {id}
         }))
     }).catch((err)=>{
         console.error(err)
     })
-    
-    /*let response = dbgames.filter((item)=>{
-        if(item.id === id) return item;
-    })
-    res.send(response)*/
 })
 
 
@@ -126,6 +120,33 @@ app.post('/admin', async (req,res)=>{
     }else{
         res.send('usuário ou senha incorretos')
     }
+})
+
+app.get('/update?', async (req, res)=>{
+    const url = req.query.url
+    const title = req.query.title
+    const id = req.query.id
+
+    if(!id) return res.send("you must send an ID")
+    if(!req.query.key == process.env.USER_KEY) return res.send("you didn't enter a valid KEY")
+//    http://localhost:5000/update?key=eusla&title=terraria&id=422&url=https://www.youtube.com/watch?v=FYEqrVqgTxw
+    try {
+        const gameAllId = await post.findAll({
+            where: {id}
+        })
+        console.log(gameAllId[0].id)
+        if(!(url === undefined) || (url === "") || (url === null)){
+            gameAllId[0].youturl = url
+        }
+        if(!(title === undefined) || (title === "") || (title === null)){
+            gameAllId[0].title = title
+        }
+        await gameAllId[0].save()
+        res.send("you have updated!!")
+    } catch (error) {
+        res.send(error)
+    }
+    
 })
 
 app.listen(port, ()=>{
