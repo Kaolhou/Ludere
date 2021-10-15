@@ -1,6 +1,51 @@
 <style>
-    
+    body{
+        margin: 0;
+        padding: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #222;
+    }
+    form{
+        background-color: #444;
+        width: 400px;
+        padding: 20px;
+        margin: auto;
+        margin-top: 30px;
+        text-align: center;
+        border-radius: 17px;
+        box-shadow: 3px 3px 10px #00000048;
+    }
+    p#top{
+        margin: 10px;
+    }
+    #Iaval{
+        display: block;
+        width: 300px;
+        resize: vertical;
+        margin: 10px;
+    }
+    #Ititle{
+
+    }
+    #Iid{
+        width: 60px;
+    }
+    #Iyou{
+        margin: 10px;
+    }
 </style>
 <form action="/add" method="post">
-    
+    <h1>Adicionar Dados de Jogo</h1>
+    <p id="top">
+        <label for="Iid">ID: <input type="number" name="Nid" id="Iid" required></label>
+        <label for="Ititle">Título: <input type="text" name="Ntitle" id="Ititle"></label>
+    </p>
+    <textarea name="Naval" id="Iaval" cols="30" rows="10" placeholder="digite aqui a sua avaliação do jogo" autocomplete="off" required></textarea>
+    <label for="Iyou">URL youtube: <input type="text" name="Nyou" id="Iyou"></label>
+
+    <p>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Limpar">
+    </p>
+
 </form>
