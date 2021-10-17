@@ -7,17 +7,13 @@ const bodyParser = require('body-parser');
 const handlebars = require('express-handlebars')
 const db = require('./modules/database')
 const auth = require("./modules/auth");
-const post = require('./modules/post')
+const post = require('./modules/post');
 
 app.engine('handlebars', handlebars({dafaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
 
 //dotenv init
 require('dotenv').config()
-
-//import database
-/*const db = require('./database/index.json')
-const dbgames = db.games;*/
 
 //sequelize
 app.use(bodyParser.urlencoded({extended:false}))
@@ -82,17 +78,18 @@ app.get('/games', async (req, res)=>{
 })
 
 app.get('/game/:id', async(req, res)=>{
-    const id = req.params.id
-    let game = await axios(`${API_BASE}/games/${id}?key=${API_KEY}`)
-    res.send(game.data)
+    try {
+        const id = req.params.id
+        let game = await axios(`${API_BASE}/games/${id}?key=${API_KEY}`)
+        res.send(game.data)
+    } catch (error) {
+        res.send(error)
+    }
 })
 
 app.get('/local/:id', async(req,res)=>{
     const id = req.params.id
     db.sequelize.authenticate().then(async()=>{
-        /*console.log(await post.findAll({
-            where: {id}
-        }))*/
         res.send(await post.findAll({
             where: {id}
         }))
@@ -102,23 +99,36 @@ app.get('/local/:id', async(req,res)=>{
 })
 
 
-app.post('/add', (req,res)=>{
-
+app.post('/add', async(req,res)=>{
+    const id = req.body.Nid
+    const title = req.body.Ntitle
+    const aval = req.body.Naval.split('\r\n')
+    const url = req.body.Nyou
+    /*aval.map((para)=>{
+        console.log('- '+para)
+    })*/
     try {
-        /*post.create({
-            id: 412,
-            descri: "é um jogo excelente, muito bom pt 2"
-        })*/
+        post.create({
+            id: id,
+            title: title,
+            descri: aval,
+            youturl: url
+        })
+        res.send("post created")
     } catch (error) {
-        console.error(error)
+        res.send(error)
     }
 })
 
 app.post('/admin', async (req,res)=>{
-    if(await auth(req.body.user, req.body.pass)){
-        res.render('postman')
-    }else{
-        res.send('usuário ou senha incorretos')
+    try {
+        if(await auth(req.body.user, req.body.pass)){
+            res.render('postman')
+        }else{
+            res.send('usuário ou senha incorretos')
+        }
+    } catch (error) {
+        res.send(error)
     }
 })
 
@@ -146,7 +156,6 @@ app.get('/update?', async (req, res)=>{
     } catch (error) {
         res.send(error)
     }
-    
 })
 
 app.listen(port, ()=>{

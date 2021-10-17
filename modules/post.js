@@ -3,7 +3,7 @@ const database = require('./database')
 const post = database.sequelize.define('post',{
     id:{
         primaryKey: true,
-        type: database.Sequelize.INTEGER(10),
+        type: database.Sequelize.INTEGER,
         allowNull: false,
         validate:{
             notEmpty:{
@@ -15,7 +15,7 @@ const post = database.sequelize.define('post',{
         type: database.Sequelize.STRING,
     },
     descri:{
-        type: database.Sequelize.STRING(8000),
+        type: database.Sequelize.ARRAY(database.Sequelize.STRING(8000)),
         validate:{
             notEmpty:{
                 msg: "Esse campo não pode ser vazio"

@@ -1,0 +1,25 @@
+@charset "utf-8";
+
+div.gameRow--listarea{
+    display: flex;
+}
+div.image img{
+    height: 200px;
+    position: relative;
+    top: -50%;
+    left: -30%;
+}
+div.gameRow--itemarea{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    transform: scale(.9);
+    box-shadow: 3px 3px 7px #000;
+    border-radius: 10px;
+    transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+div.gameRow--itemarea:hover{
+    transform: scale(1);
+    transition: .3s;
+    box-shadow: 3px 3px 20px #000;
+}

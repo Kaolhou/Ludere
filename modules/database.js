@@ -1,10 +1,9 @@
 require('dotenv').config()
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('server', 'root', process.env.SERVER_PASS, {
+const sequelize = new Sequelize('server', 'postgres', process.env.SERVER_PASS, {
     host: "localhost",
-    dialect: "mysql"
+    dialect: "postgres"
 })
-
 
 module.exports = {
     Sequelize: Sequelize,
