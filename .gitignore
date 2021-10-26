@@ -26,5 +26,4 @@ yarn-error.log*
 .env
 config.json
 #/public/index.html
-/database
 /homework

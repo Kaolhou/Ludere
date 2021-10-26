@@ -6,21 +6,28 @@ import './GameRow.css'
 
 function GameRow({title, item, fcla}){
     const [scrollX, setScrollX] = useState(0);
+    //const [numScroll, setNumScroll] = useState(0)
     return(
         <div className={fcla}>
             <h2>{title}</h2>
             <div className="gameRow--left" onClick={()=>{
-                let x = scrollX + 200;
+                let x = scrollX + 200
+                //console.log(Math.round(window.innerWidth / 2))
                 if(x > 0){
                     x = 0;
                 }
-                setScrollX(x);
+                
+                setScrollX(x)
             }}>
                 <NavigateBeforeIcon style={{fontSize: 50}}/>
             </div>
             <div className="gameRow--right" onClick={()=>{
                 let x = scrollX - 200;
+                let listW = item.results.length * 200;
 
+                if (window.innerWidth - listW > x){
+                    x = (window.innerWidth - listW)- 50
+                }
                 setScrollX(x);
             }}>
                 <NavigateNextIcon style={{fontSize: 50}}/>

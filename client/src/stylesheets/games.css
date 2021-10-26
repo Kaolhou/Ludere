@@ -2,6 +2,8 @@
 
 div.gameRow--listarea{
     display: flex;
+    overflow-x: hidden;
+    transition: .4s;
 }
 div.image img{
     height: 200px;
@@ -23,3 +25,49 @@ div.gameRow--itemarea:hover{
     transition: .3s;
     box-shadow: 3px 3px 20px #000;
 }
+
+
+/*area individual*/
+/*div#view{
+
+}*/
+
+/*.local-photo-init{
+    display: flex;
+}*/
+.local-photo-init #img-main{
+    width: 99%;
+    max-width: 500px;
+    display: block;
+    margin: auto;
+}
+/*.local-photo-init div#blur{
+    align-content: center;
+}*/
+/*div#blur{
+
+}*/
+div#content{
+    display: block;
+    width: 99%;
+    max-width: 900px;
+    margin: auto;
+}
+h1#title-main-uni{
+    text-align: right;
+    max-width: 500px;
+    display: block;
+}
+div#requirements{
+    font-size: small;
+    background-color: #333;
+    padding: 10px;
+    height: 250px;
+    width: 300px;
+    overflow-y: scroll;
+    margin: auto;
+}
+/*div#requirements .reqpar{
+    display: block;
+    
+}*/

@@ -11,10 +11,5 @@ if(window.location.pathname === "/admin"){
     document.getElementById('root')
   );
 }else{
-  ReactDOM.render(
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>,
-    document.getElementById('root')
-  );
+  ReactDOM.render(<App />,document.getElementById('root'));
 }

@@ -3,3 +3,43 @@
 .rpg div.image img{
     left: -60%;
 }
+
+.gameRow--left,
+.gameRow--right{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #00000099;
+    padding:10px;
+    z-index: 99;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-top: 7%;
+}
+.gameRow--right{
+    margin-top: 25%;
+    right: 20px;
+}
+.gameRow--left{
+    margin-top: 25%;
+    left: 20px;
+}
+
+@media screen and (min-width: 312px) {
+    .gameRow--left, .gameRow--right{
+        margin-top: 15%;
+    }
+}
+@media screen and (min-width: 600px) {
+    .gameRow--left, .gameRow--right{
+        margin-top: 10%;
+    }
+}
+@media screen and (min-width: 1000px) {
+    .gameRow--left, .gameRow--right{
+        margin-top: 5%;
+    }
+}

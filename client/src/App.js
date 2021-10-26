@@ -16,7 +16,7 @@ import Home from "./modules/home"
 function App() {
   return (
     <div id="appinter">
-      <Router>
+      <Router  forceRefresh={true}>
         <nav id="menu">
           <ul id="nav">
             <li>
