@@ -67,6 +67,14 @@ div#requirements{
     overflow-y: scroll;
     margin: auto;
 }
+div#website{
+    width: 200px;
+    margin: auto;
+    padding: 5px;
+}
+img.websiteLogo{
+    width: 50px;
+}
 /*div#requirements .reqpar{
     display: block;
     

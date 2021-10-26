@@ -35,7 +35,7 @@ function GameRow({title, item, fcla}){
             
             <div className={`gameRow--listarea ${fcla}`} style={{marginLeft: scrollX}}>
                 {item.results.length > 0 && item.results.map((item, key) =>(
-                    <a href={`games?id=${item.id}`} key={key} className="gameRow--itemLink">
+                    <a href={`game?id=${item.id}`} key={key} className="gameRow--itemLink">
                         <div className="gameRow--itemarea" key={key}>
                             <div className="image">
                                 <img src={`${item.background_image}`} alt={`${item.name}`}/>

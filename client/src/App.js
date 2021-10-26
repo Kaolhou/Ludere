@@ -12,6 +12,7 @@ import Games from "./modules/games"
 import Footer from "./modules/footer"
 import About from "./modules/about"
 import Home from "./modules/home"
+import Game from "./modules/game"
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
               <Link to="/about" className="links">Sobre</Link>
             </li>
           </ul>
+          <Link to="/game" />
           </nav>
 
           <div id="body">
@@ -45,6 +47,9 @@ function App() {
                 <div className="innerface">
                   <Home />
                 </div>
+              </Route>
+              <Route>
+                <Game/>
               </Route>
             </Switch>
           </div>

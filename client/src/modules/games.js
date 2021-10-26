@@ -2,7 +2,8 @@ import {useEffect, useState} from 'react';
 import "../stylesheets/games.css"
 import GameRow from '../components/gamerow/GameRow';
 import load from '../img/home/load.gif'
-//import PcReq from '../components/PcReq/PcReq';
+import web from "../img/icons/website.png"
+import Aval from '../components/aval/aval';
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ()=>{
@@ -19,6 +20,7 @@ export default ()=>{
     const [gameUni, setGameUni] = useState([])
     const [avaLocal, setAvaLocal] = useState([])
     const [platform, setPlatform] = useState()
+    const [content, setContent] = useState([])
 
     if(args === game){
         console.log("to no multi")
@@ -62,12 +64,14 @@ export default ()=>{
                     var sla = listG.platforms.filter((item)=>{
                         return item.platform.id === 4
                     })
+                    
                     console.log(sla[0])
                     setPlatform(sla)
                     
                     //local data
                     const promL = await fetch(`/local/${id}`)
                     var listL = await promL.json()
+                    setContent(listL[0].descri.join(";"))
                     setAvaLocal(listL[0])
                 } catch (error) {
                     console.error(error)
@@ -83,20 +87,23 @@ export default ()=>{
         })
         return(
             <div id="view">
-                <h1 id="title-main-uni">{gameUni.name}</h1>
+                <h1 id="title-main-uni">{gameUni.name} {gameUni.website && 
+                    <div id="website">
+                        <a href={gameUni.website} target="_blank" rel="noreferrer"><img src={web} alt={gameUni.slug} className="websiteLogo" /></a>
+                    </div>
+                }</h1>
                 <div className="local-photo-init">
                     <img src={`${gameUni.background_image}`} alt={gameUni.name} id="img-main" />
                 </div>
                 
                 <div id="content">
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut eaque cumque officiis ipsum? Ad, eos dolorum et illo aperiam maiores repellat rem. Nam autem omnis adipisci a repellat quia.</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In placeat consequuntur libero odio sint voluptate officiis sapiente vitae tempore aperiam ex maiores, porro illum explicabo molestiae exercitationem eligendi provident adipisci.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis aut eaque cumque officiis ipsum? Ad, eos dolorum et illo aperiam maiores repellat rem. Nam autem omnis adipisci a repellat quia.</p>
-                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. In placeat consequuntur libero odio sint voluptate officiis sapiente vitae tempore aperiam ex maiores, porro illum explicabo molestiae exercitationem eligendi provident adipisci.</p>
+                    <Aval content={content} />
+                    {/*avaLocal.descri.map((item)=>(<p>{item}</p>))*/}
+
                 </div>
-                <div id="requirements">
+                {/*<div id="requirements">
                     
-                </div>
+                </div>*/}
                 {gameUni.length <= 0 &&
                     <div className="loading">
                         <img src={load} alt="laitoba" />
