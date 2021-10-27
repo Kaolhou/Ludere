@@ -19,3 +19,9 @@
         [x]sobre nós
         []jogos(total)
         []jogos(individual)
+# Maneira de instalação
+- digite ```npm install```, tanto na pasta raiz quanto na pasta **client**
+- crie na pasta raiz o seu arquivo ```.env```, contendo a sua chave de api da [Rawg.io](https://rawg.io), senha de servidor postgre e chave para permissão de alteração de dados
+- crie usuários dentro da tabela ```user```
+- para inicialização digite em um terminal ```npm run sever```, e em outro digite ```npm run client```. Se conseguir usar **concurrently**, apenas digite ```npm start```
+- acessando a área de cliente pelo navegador acesse o __path__: ```/admin```, digite o usuário e senha, e adicione a avaliação de jogo que desejar
