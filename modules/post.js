@@ -15,7 +15,7 @@ const post = database.sequelize.define('post',{
         type: database.Sequelize.STRING,
     },
     descri:{
-        type: database.Sequelize.ARRAY(database.Sequelize.STRING(8000)),
+        type: database.Sequelize.STRING(8000),
         validate:{
             notEmpty:{
                 msg: "Esse campo não pode ser vazio"

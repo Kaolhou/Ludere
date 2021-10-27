@@ -1,5 +1,9 @@
 @charset "utf-8";
 
+div#view{
+    padding: 10px;
+}
+
 div.gameRow--listarea{
     display: flex;
     overflow-x: hidden;
@@ -75,7 +79,18 @@ div#website{
 img.websiteLogo{
     width: 50px;
 }
+
+div#content{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
 /*div#requirements .reqpar{
     display: block;
     
 }*/
+@media screen and (max-width: 300px){
+    h1#title-main-uni{
+        font-size: 1.9em;
+    }
+}

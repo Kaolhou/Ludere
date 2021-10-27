@@ -102,7 +102,7 @@ app.get('/local/:id', async(req,res)=>{
 app.post('/add', async(req,res)=>{
     const id = req.body.Nid
     const title = req.body.Ntitle
-    const aval = req.body.Naval.split('\r\n')
+    const aval = req.body.Naval.split('\r\n').join('\n')
     const url = req.body.Nyou
     /*aval.map((para)=>{
         console.log('- '+para)

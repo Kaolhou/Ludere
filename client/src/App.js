@@ -30,7 +30,7 @@ function App() {
               <Link to="/about" className="links">Sobre</Link>
             </li>
           </ul>
-          <Link to="/game" />
+          <Link to="/game" className="links" />
           </nav>
 
           <div id="body">
@@ -43,14 +43,15 @@ function App() {
                   <Games />
                 </div>
               </Route>
+              <Route path="/game">
+                <Game />
+              </Route>
               <Route path="/">
                 <div className="innerface">
                   <Home />
                 </div>
               </Route>
-              <Route>
-                <Game/>
-              </Route>
+              
             </Switch>
           </div>
         <hr className="foot"/>
