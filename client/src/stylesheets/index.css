@@ -5,17 +5,16 @@
     --color-theme-light2: ;
     --color-theme-light3: ;
     --color-theme-light4: ;
-    --color-theme-light5: ;
 
     --color-theme-dark1: ;
     --color-theme-dark2: ;
     --color-theme-dark3: ;
     --color-theme-dark4: ;
-    --color-theme-dark5: ;
 
     --color-theme-ok1: ;/*green*/
     --color-theme-danger2: ;/*yellow*/
     --color-theme-alert3: ;/*red*/
+    --color-theme-principal:
 }
 ::-webkit-scrollbar {
     width: 12px;               /* width of the entire scrollbar */

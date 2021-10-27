@@ -3,13 +3,22 @@ const express = require('express');
 const app = express();
 const port = 5000;
 const axios = require('axios');
+const bodyParser = require('body-parser');
+const handlebars = require('express-handlebars')
+const db = require('./modules/database')
+const auth = require("./modules/auth");
+const post = require('./modules/post');
 
-//import database
-const db = require('./database/index.json')
-const dbgames = db.games;
+app.engine('handlebars', handlebars({dafaultLayout: 'main'}))
+app.set('view engine', 'handlebars')
 
 //dotenv init
 require('dotenv').config()
+
+//sequelize
+app.use(bodyParser.urlencoded({extended:false}))
+app.use(bodyParser.json())
+
 
 //api bases
 const API_KEY = process.env.KEY;
@@ -69,19 +78,87 @@ app.get('/games', async (req, res)=>{
 })
 
 app.get('/game/:id', async(req, res)=>{
-    const id = req.params.id
-    let game = await axios(`${API_BASE}/games/${id}?key=${API_KEY}`)
-    res.send(game.data)
+    try {
+        const id = req.params.id
+        let game = await axios(`${API_BASE}/games/${id}?key=${API_KEY}`)
+        res.send(game.data)
+    } catch (error) {
+        res.send(error)
+    }
 })
 
 app.get('/local/:id', async(req,res)=>{
     const id = req.params.id
-    let response = dbgames.filter((item)=>{
-        if(item.id === id) return item;
+    db.sequelize.authenticate().then(async()=>{
+        res.send(await post.findAll({
+            where: {id}
+        }))
+    }).catch((err)=>{
+        console.error(err)
     })
-    res.send(response)
+})
+
+
+app.post('/add', async(req,res)=>{
+    const id = req.body.Nid
+    const title = req.body.Ntitle
+    const aval = req.body.Naval.split('\r\n').join('\n')
+    const url = req.body.Nyou
+    /*aval.map((para)=>{
+        console.log('- '+para)
+    })*/
+    try {
+        post.create({
+            id: id,
+            title: title,
+            descri: aval,
+            youturl: url
+        })
+        res.send("post created")
+    } catch (error) {
+        res.send(error)
+    }
+})
+
+app.post('/admin', async (req,res)=>{
+    try {
+        if(await auth(req.body.user, req.body.pass)){
+            res.render('postman')
+        }else{
+            res.send('usuário ou senha incorretos')
+        }
+    } catch (error) {
+        res.send(error)
+    }
+})
+
+app.get('/update?', async (req, res)=>{
+    const url = req.query.url
+    const title = req.query.title
+    const id = req.query.id
+
+    if(!id) return res.send("you must send an ID")
+    if(!req.query.key == process.env.USER_KEY) return res.send("you didn't enter a valid KEY")
+//    http://localhost:5000/update?key=eusla&title=terraria&id=422&url=https://www.youtube.com/watch?v=FYEqrVqgTxw
+    try {
+        const gameAllId = await post.findAll({
+            where: {id}
+        })
+        console.log(gameAllId[0].id)
+        if(!(url === undefined) || (url === "") || (url === null)){
+            gameAllId[0].youturl = url
+        }
+        if(!(title === undefined) || (title === "") || (title === null)){
+            gameAllId[0].title = title
+        }
+        await gameAllId[0].save()
+        res.send("you have updated!!")
+    } catch (error) {
+        res.send(error)
+    }
 })
 
 app.listen(port, ()=>{
     console.log(`server started at port ${port}`);
+    console.log(`http://localhost:${port}`)
 })

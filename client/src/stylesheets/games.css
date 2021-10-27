@@ -1,0 +1,96 @@
+@charset "utf-8";
+
+div#view{
+    padding: 10px;
+}
+
+div.gameRow--listarea{
+    display: flex;
+    overflow-x: hidden;
+    transition: .4s;
+}
+div.image img{
+    height: 200px;
+    position: relative;
+    top: -50%;
+    left: -30%;
+}
+div.gameRow--itemarea{
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    transform: scale(.9);
+    box-shadow: 3px 3px 7px #000;
+    border-radius: 10px;
+    transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+div.gameRow--itemarea:hover{
+    transform: scale(1);
+    transition: .3s;
+    box-shadow: 3px 3px 20px #000;
+}
+
+
+/*area individual*/
+/*div#view{
+
+}*/
+
+/*.local-photo-init{
+    display: flex;
+}*/
+.local-photo-init #img-main{
+    width: 99%;
+    max-width: 500px;
+    display: block;
+    margin: auto;
+}
+/*.local-photo-init div#blur{
+    align-content: center;
+}*/
+/*div#blur{
+
+}*/
+div#content{
+    display: block;
+    width: 99%;
+    max-width: 900px;
+    margin: auto;
+}
+h1#title-main-uni{
+    text-align: right;
+    max-width: 500px;
+    display: block;
+}
+div#requirements{
+    font-size: small;
+    background-color: #333;
+    padding: 10px;
+    height: 250px;
+    width: 300px;
+    overflow-y: scroll;
+    margin: auto;
+}
+div#website{
+    width: 200px;
+    margin: auto;
+    padding: 5px;
+}
+img.websiteLogo{
+    width: 50px;
+}
+
+div#content{
+    margin-top: 30px;
+    margin-bottom: 20px;
+    max-width: 600px;
+}
+/*div#requirements .reqpar{
+    display: block;
+    
+}*/
+@media screen and (max-width: 300px){
+    h1#title-main-uni{
+        font-size: 1.9em;
+    }
+}

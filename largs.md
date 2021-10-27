@@ -3,6 +3,8 @@ largura-default: 1460px
 largura-tablet: 960px
 largura-cell: 411px
 
+ngrok http 3000 -host-header="localhost:3000"
+
 games
 3328 - The Witcher 3: Wild Hunt
 5679 - The Elder Scrolls V: Skyrim
