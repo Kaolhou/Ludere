@@ -104,6 +104,8 @@ app.post('/add', async(req,res)=>{
     const title = req.body.Ntitle
     const aval = req.body.Naval.split('\r\n').join('\n')
     const url = req.body.Nyou
+    const stars = req.body.Nstars
+    const fras = req.body.Nnote
     /*aval.map((para)=>{
         console.log('- '+para)
     })*/
@@ -112,9 +114,11 @@ app.post('/add', async(req,res)=>{
             id: id,
             title: title,
             descri: aval,
-            youturl: url
+            youturl: url,
+            stars: stars,
+            fras: fras
         })
-        res.send("post created")
+        res.send("post created successfully")
     } catch (error) {
         res.send(error)
     }

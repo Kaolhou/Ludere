@@ -2,13 +2,15 @@ import {useEffect, useState} from 'react';
 import load from '../img/home/load.gif'
 import web from "../img/icons/website.png"
 import '../stylesheets/games.css'
+import stars from './stars'
 //import Aval from '../components/aval/aval';
 
 function Game(){
     const [gameUni, setGameUni] = useState([])
     const [avaLocal, setAvaLocal] = useState([])
     const [platform, setPlatform] = useState()
-    const [content, setContent] = useState({})
+    const [imgStar, setImgStar] = useState()
+    //const [content, setContent] = useState({})
 
     
     //inicio de manuseamento de url
@@ -38,7 +40,26 @@ function Game(){
                     //local data
                     const promL = await fetch(`/local/${id}`)
                     var listL = await promL.json()
-                    setContent(listL.descri)
+
+                    switch(listL[0].stars){
+                        case 1:
+                            setImgStar(stars.one)
+                        break;
+                        case 2:
+                            setImgStar(stars.two)
+                        break;
+                        case 3:
+                            setImgStar(stars.three)
+                        break;
+                        case 4:
+                            setImgStar(stars.four)
+                        break;
+                        case 5:
+                            setImgStar(stars.five)
+                        break;
+                        default: return "error";
+                    }
+
                     setAvaLocal(listL[0])
                 } catch (error) {
                     console.error(error)
@@ -53,7 +74,7 @@ function Game(){
             if(windowTop > 3) return
             document.getElementById('img-main').style.filter = `blur(${windowTop}px)`
         })
-        console.log(content)
+
         return(
             <div id="view">
                 <h1 id="title-main-uni">{gameUni.name} {gameUni.website && 
@@ -65,6 +86,11 @@ function Game(){
                     <img src={`${gameUni.background_image}`} alt={gameUni.name} id="img-main" />
                 </div>
                 
+                <div id="short-aval">
+                    <span className="spanaval"><img src={imgStar} alt="bababoi" id="starsvg" /></span>
+                    <span className="spanaval">{`"${avaLocal.fras}"`}</span>
+                </div>
+
                 <div id="content">
                     {//<Aval content={content} />
                     }
