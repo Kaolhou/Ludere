@@ -17,7 +17,7 @@ import Game from "./modules/game"
 function App() {
   return (
     <div id="appinter">
-      <Router  forceRefresh={true}>
+      <Router /* forceRefresh={true}*/>
         <nav id="menu">
           <ul id="nav">
             <li>

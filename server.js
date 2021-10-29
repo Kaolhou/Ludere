@@ -162,6 +162,20 @@ app.get('/update?', async (req, res)=>{
     }
 })
 
+app.get('/news', (req, res)=>{
+    const news = [
+        {
+            id:1,
+            title: "noticia de um corno ambulante"
+        },
+        {
+            id:2,
+            title: "steve jobs died of ligma"
+        }
+    ]
+    res.send(news)
+})
+
 app.listen(port, ()=>{
     console.log(`server started at port ${port}`);
     console.log(`http://localhost:${port}`)

@@ -57,17 +57,19 @@ div#content{
     max-width: 900px;
     margin: auto;
 }
-h1#title-main-uni{
-    text-align: right;
+div#title-main-uni{
     max-width: 500px;
     display: block;
+}
+div#title-main-uni h1{
+    text-align: right;
 }
 div#requirements{
     font-size: small;
     background-color: #333;
     padding: 10px;
     height: 250px;
-    width: 300px;
+    max-width: 300px;
     overflow-y: scroll;
     margin: auto;
 }
@@ -107,7 +109,7 @@ img#starsvg{
     
 }
 @media screen and (max-width: 300px){
-    h1#title-main-uni{
+    div#title-main-uni h1{
         font-size: 1.9em;
     }
 }

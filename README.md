@@ -14,6 +14,8 @@
         [x]criar uma tabela para o banco de dados local
         [x]introduzir ao front end
 
+    - adicionar nome para cada jogo individual
+
     - estilização
         []página inicial
         [x]sobre nós

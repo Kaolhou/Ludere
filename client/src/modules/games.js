@@ -8,18 +8,17 @@ import Aval from '../components/aval/aval';*/
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ()=>{
     const [gameList, setGameList] = useState([])
-    console.log("to no multi")
-
-        const loadAll = async ()=>{
-            try {
-                let prom = await fetch('/games')
-                var list = await prom.json()
-                setGameList(list)
-            } catch (error) {
-                console.error(error)
-            }
+    const loadAll = async ()=>{
+        try {
+            let prom = await fetch('/games')
+            var list = await prom.json()
+            setGameList(list)
+        } catch (error) {
+            console.error(error)
         }
-        loadAll();
+    }
+    loadAll();
+    console.log("to no multi")
     
     return(
         <div className="page">
