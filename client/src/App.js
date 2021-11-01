@@ -13,6 +13,7 @@ import Footer from "./modules/footer"
 import About from "./modules/about"
 import Home from "./modules/home"
 import Game from "./modules/game"
+import News from './modules/news';
 
 function App() {
   return (
@@ -45,6 +46,9 @@ function App() {
               </Route>
               <Route path="/game">
                 <Game />
+              </Route>
+              <Route path="/news">
+                <News />
               </Route>
               <Route path="/">
                 <div className="innerface">

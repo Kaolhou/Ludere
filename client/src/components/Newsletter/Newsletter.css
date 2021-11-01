@@ -1,0 +1,8 @@
+@charset "utf-8";
+div.news-list{
+    background-color: rgb(87, 236, 0);
+}
+div.news-list-item{
+    background-color: blue;
+    margin: 5px;
+}

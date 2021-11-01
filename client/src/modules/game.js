@@ -23,47 +23,47 @@ function Game(){
     id = id.slice(id.indexOf("=")+1)
     
     //console.log("to no solo")
-        useEffect(()=>{
-            const loadAll = async ()=>{
-                try {
-                    //api data
-                    const promG = await fetch(`/game/${id}`)
-                    var listG = await promG.json()
-                    setGameUni(listG)
-                    var plat = listG.platforms.filter((item)=>{
-                        return item.platform.id === 4
-                    })
-                    
-                    console.log(listG)
-                    setPlatform(plat)
-                    
-                    //local data
-                    const promL = await fetch(`/local/${id}`)
-                    var listL = await promL.json()
+    useEffect(()=>{
+        const loadAll = async ()=>{
+            try {
+                //api data
+                const promG = await fetch(`/game/${id}`)
+                var listG = await promG.json()
+                setGameUni(listG)
+                var plat = listG.platforms.filter((item)=>{
+                    return item.platform.id === 4
+                })
+                
+                console.log(listG)
+                setPlatform(plat)
+                
+                //local data
+                const promL = await fetch(`/local/${id}`)
+                var listL = await promL.json()
 
-                    //alteração de imagem para número de estrelas
-                    switch(listL[0].stars){
-                        case 1:setImgStar(stars.one)
-                        break;
-                        case 2: setImgStar(stars.two)
-                        break;
-                        case 3: setImgStar(stars.three)
-                        break;
-                        case 4: setImgStar(stars.four)
-                        break;
-                        case 5: setImgStar(stars.five)
-                        break;
-                        default: return "error";
-                    }
-
-                    setAvaLocal(listL[0])
-                } catch (error) {
-                    console.error(error)
+                //alteração de imagem para número de estrelas
+                switch(listL[0].stars){
+                    case 1: setImgStar(stars.one)
+                    break;
+                    case 2: setImgStar(stars.two)
+                    break;
+                    case 3: setImgStar(stars.three)
+                    break;
+                    case 4: setImgStar(stars.four)
+                    break;
+                    case 5: setImgStar(stars.five)
+                    break;
+                    default: return "error";
                 }
+
+                setAvaLocal(listL[0])
+            } catch (error) {
+                console.error(error)
             }
-            loadAll();
-            document.getElementById('content').innerText = avaLocal.descri
-        },[id, avaLocal.descri])
+        }
+        loadAll();
+        document.getElementById('content').innerText = avaLocal.descri
+    },[id, avaLocal.descri])
 
         //animação de scroll
         window.addEventListener('scroll', ()=>{

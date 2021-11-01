@@ -1,9 +1,17 @@
+import './Newsletter.css'
 
 function Newsletter({all}){
-    console.log(all)
+
+    
     return(
-        <div className="news-item" >
-            {all.title}
+        <div className="news-list" >
+            {all.map((item, key)=>(
+                <a href="/news" key={key}>
+                    <div className="news-list-item">
+                        {item.title}
+                    </div>
+                </a>
+            ))}
         </div>
     )
 }
