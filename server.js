@@ -8,6 +8,8 @@ const handlebars = require('express-handlebars')
 const db = require('./modules/database')
 const auth = require("./modules/auth");
 const post = require('./modules/post');
+const news = require('./modules/news');
+const { create } = require('express-handlebars');
 
 app.engine('handlebars', handlebars({dafaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
@@ -124,10 +126,12 @@ app.post('/add', async(req,res)=>{
     }
 })
 
-app.post('/admin', async (req,res)=>{
+app.post('/admin?', async (req,res)=>{
+    const prot = req.query.r
     try {
         if(await auth(req.body.user, req.body.pass)){
-            res.render('postman')
+            if(prot != 'postman' && prot != "newsman") return res.send('unexistent protocol')
+            res.render(prot)
         }else{
             res.send('usuário ou senha incorretos')
         }
@@ -162,18 +166,30 @@ app.get('/update?', async (req, res)=>{
     }
 })
 
-app.get('/news', (req, res)=>{
-    const news = [
-        {
-            id:1,
-            title: "noticia de um corno ambulante"
-        },
-        {
-            id:2,
-            title: "steve jobs died of ligma"
-        }
-    ]
-    res.send(news)
+app.get('/news',async (req, res)=>{
+    try {
+        res.send(await news.findAll({
+            order: [['id', 'DESC']],
+            limit: 2
+        }))
+    } catch (err) {
+        console.error(err)
+    }
+    
+})
+
+app.post('/news',(req,res)=>{
+    const titulo = req.body.Ntitle
+    const destaque = req.body.Ndest
+    const cont = req.body.Ncont
+    try {
+        post.create({
+            titulo,
+            destaque,
+            cont
+        })
+        res.send('post created successfully')
+    } catch (error) {console.error(err)}
 })
 
 app.listen(port, ()=>{

@@ -18,9 +18,6 @@ const news = database.sequelize.define('news',{
     cont: {
         type: database.Sequelize.STRING(5000),
         allowNull: false
-    },
-    imagem:{
-
     }
 
     
@@ -28,4 +25,4 @@ const news = database.sequelize.define('news',{
 
 //news.sync({force:true})
 
-module.exports = post
+module.exports = news
