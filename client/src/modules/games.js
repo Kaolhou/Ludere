@@ -1,4 +1,4 @@
-import {/*useEffect, */useState} from 'react';
+import {useEffect, useState} from 'react';
 import "../stylesheets/games.css"
 import GameRow from '../components/gamerow/GameRow';
 import load from '../img/home/load.gif'
@@ -8,16 +8,19 @@ import Aval from '../components/aval/aval';*/
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ()=>{
     const [gameList, setGameList] = useState([])
-    const loadAll = async ()=>{
-        try {
-            let prom = await fetch('/games')
-            var list = await prom.json()
-            setGameList(list)
-        } catch (error) {
-            console.error(error)
+    useEffect(()=>{
+        const loadAll = async ()=>{
+            try {
+                let prom = await fetch('/games')
+                var list = await prom.json()
+                console.log(list)
+                setGameList(list)
+            } catch (error) {
+                console.error(error)
+            }
         }
-    }
-    loadAll();
+        loadAll();
+    },[])
     console.log("to no multi")
     
     return(
