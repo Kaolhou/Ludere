@@ -12,13 +12,13 @@
 body{
   padding: 0;
   margin: 0;
-  background-color: #222;
-  color: #fff;
+  background-color: #000008;
+  color: #f4f4f4;
   
 }
 
 nav#menu{
-  background-color: #111;
+  background-color: #404040;
 }
 
 ul#nav{
@@ -31,15 +31,17 @@ ul#nav{
   overflow: hidden;
 }
 ul#nav li a{
-  color: #fff;
+  color: #f31173;
+  font-weight: bol;
   text-decoration: none;
   padding: 5px;
-  background-color: #111;
+  background-color: #404040;
   transition: .3s;
   padding:20px;
 }
 ul#nav li a:hover{
-  background-color:darkcyan;
+  /*background-color: #f2e029;*/
+  color: #f2e029;
   transition: .3s;
 }
 ul#nav li{
@@ -48,11 +50,15 @@ ul#nav li{
   
 }
 
-div.innerface, div#footer{
+div.innerface{
   padding: 15px;
 }
 div.innerface{
   text-align: justify;
+}
+
+div#footer{
+  padding: 0;
 }
 
 div#footer > div#agrade > ul > li > a{
@@ -60,10 +66,17 @@ div#footer > div#agrade > ul > li > a{
   transition: .2s;
   text-decoration: none;
 }
-div#footer > div#agrade > ul > li > a:hover{
-  color:blue;transition: .2s;
+div#footer > .content-foot > div#agrade > ul > li > a:hover{
+  color:blue;transition: .3s;
 }
-
+div#footer > .content-foot > div#agrade > ul > li > a{
+  transition: .3s;
+}
+div.content-foot{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 @media screen and (min-width: 960px) {
 
 }
@@ -73,10 +86,9 @@ div#footer > div#agrade > ul > li > a:hover{
   }
 }
 @media screen and (min-width: 650px) {
-  div#footer{
-    padding: 20px 120px;
+  div.content-foot{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-evenly;
   }
   
 }

@@ -58,7 +58,6 @@ function App() {
               
             </Switch>
           </div>
-        <hr className="foot"/>
       </Router>
       <Footer />
     </div>

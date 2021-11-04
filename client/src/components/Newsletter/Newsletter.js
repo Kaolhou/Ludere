@@ -5,6 +5,7 @@ function Newsletter({all}){
     
     return(
         <div className="news-list" >
+            <h2>Notícias</h2>
             {all.map((item, key)=>(
                 <a href={`/news?id=${item.id}`} key={key}>
                     <div className="news-list-item">

@@ -108,9 +108,6 @@ app.post('/add', async(req,res)=>{
     const url = req.body.Nyou
     const stars = req.body.Nstars
     const fras = req.body.Nnote
-    /*aval.map((para)=>{
-        console.log('- '+para)
-    })*/
     try {
         post.create({
             id: id,
@@ -170,7 +167,7 @@ app.get('/news',async (req, res)=>{
     try {
         res.send(await news.findAll({
             order: [['id', 'DESC']],
-            limit: 2
+            limit: 4
         }))
     } catch (err) {
         console.error(err)
@@ -183,7 +180,7 @@ app.post('/news',(req,res)=>{
     const destaque = req.body.Ndest
     const cont = req.body.Ncont
     try {
-        post.create({
+        news.create({
             titulo,
             destaque,
             cont
