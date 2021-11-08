@@ -23,9 +23,10 @@
     }
 </style>
 <form action="/news" method="post">
-    <p><label for="Ititulo">Título: <input id="Ititulo" name="Ntitle" type="text"></label></p>
-    <p><label for="Idest">Destaque: <input id="Idest" name="Ndest" type="text"></label></p>
-    <p><label for="Icont">Conteúdo: <textarea name="Ncont" id="Icont" cols="30" rows="10" placeholder="digite o corpo do texto" autocomplete="off"></textarea></label></p>
+    <p><label for="Ititulo">Título: <input id="Ititulo" name="Ntitle" type="text" required></label></p>
+    <p><label for="Idest">Destaque: <input id="Idest" name="Ndest" type="text" required></label></p>
+    <p><label for="Icont">Conteúdo: <textarea name="Ncont" id="Icont" cols="30" rows="10" placeholder="digite o corpo do texto" autocomplete="off" required></textarea></label></p>
+    <p><label for="Ifontes">Fontes: <input id="Ifontes" name="Nfontes" type="text" placeholder="separdor é espaço" required></label></p>
 
     <p>
         <input type="submit" value="Enviar">

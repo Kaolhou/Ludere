@@ -3,7 +3,7 @@ import '../stylesheets/news.css'
 
 
 function News(){
-    const [newsInfo, setNewsInfo] = useState([{titulo: "", destaque: "", cont: ""}])
+    const [newsInfo, setNewsInfo] = useState([{titulo: "", destaque: "", cont: "", fontes: []}])
 
     const URL = window.location.href;
     var args = URL.slice(URL.indexOf("?")+1);
@@ -28,6 +28,15 @@ function News(){
             <article>
                 {newsInfo[0].cont}
             </article>
+            <div>
+                <ul>
+                    {newsInfo[0].fontes.map((item)=>(
+                        <li>
+                            <a href={item} target="_blank" rel="noreferrer">{item}</a>
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }

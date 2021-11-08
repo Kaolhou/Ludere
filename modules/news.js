@@ -18,6 +18,10 @@ const news = database.sequelize.define('news',{
     cont: {
         type: database.Sequelize.STRING(5000),
         allowNull: false
+    },
+    fontes: {
+        type: database.Sequelize.ARRAY(database.Sequelize.STRING(300)),
+        allowNull: false
     }
 
     

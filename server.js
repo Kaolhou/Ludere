@@ -187,11 +187,13 @@ app.post('/news',(req,res)=>{
     const titulo = req.body.Ntitle
     const destaque = req.body.Ndest
     const cont = req.body.Ncont
+    const fontes = req.body.Nfontes.split(' ')
     try {
         news.create({
             titulo,
             destaque,
-            cont
+            cont,
+            fontes
         })
         res.send('post created successfully')
     } catch (error) {console.error(err)}
