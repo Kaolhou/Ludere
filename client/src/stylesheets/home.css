@@ -1,0 +1,28 @@
+@charset "utf-8";
+
+section#cont{
+    max-width: 1000px;
+    margin: auto;
+}
+article.text{
+    max-width: 500px;
+    min-width: 300px;
+    margin: 10px;
+}
+div#home-conteiner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+div#bababoi{
+    background-color: blue;
+    width: 400px;
+    height: 300px;
+}
+@media screen and (max-width: 961px){
+    article.text{
+        max-width: 800px;
+        min-width: 300px;
+        margin: 10px;
+    }
+}

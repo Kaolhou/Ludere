@@ -21,7 +21,10 @@ div.gameRow--itemarea{
     overflow: hidden;
     transform: scale(.9);
     box-shadow: 3px 3px 7px #000;
-    border-radius: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 15px;
     transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 div.gameRow--itemarea:hover{
@@ -48,9 +51,21 @@ div.gameRow--itemarea:hover{
 /*.local-photo-init div#blur{
     align-content: center;
 }*/
-/*div#blur{
 
-}*/
+span.title{
+    margin-top: -50px;
+    position: fixed;
+    opacity: 0;
+    text-align: left;
+    color: #000008;
+    font-weight: bolder;
+    transition: .4s;
+    -webkit-text-stroke: .4px #fff
+}
+div.gameRow--itemarea:hover span.title{
+    opacity: 1;
+    transition: .4s;
+}
 div#content{
     display: block;
     width: 99%;

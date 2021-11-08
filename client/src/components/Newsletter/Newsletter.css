@@ -1,8 +1,16 @@
 @charset "utf-8";
 div.news-list{
-    background-color: rgb(87, 236, 0);
+    max-width: 1000px;
+    margin: auto;
 }
 div.news-list-item{
-    background-color: blue;
-    margin: 5px;
+    background-color: #404040a1;
+    padding: 15px;
+    margin: 7px auto;
+    border-radius: 10px;
+    max-width: 700px;
+    transition: .3s;
+}
+div.news-list-item:hover{
+    background-color: #404040;
 }

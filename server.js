@@ -175,6 +175,14 @@ app.get('/news',async (req, res)=>{
     
 })
 
+app.get('/news/:id',async (req, res)=>{
+    const id = req.params.id
+    
+    res.send(await news.findAll({
+        where: {id}
+    }))
+})
+
 app.post('/news',(req,res)=>{
     const titulo = req.body.Ntitle
     const destaque = req.body.Ndest
@@ -188,6 +196,7 @@ app.post('/news',(req,res)=>{
         res.send('post created successfully')
     } catch (error) {console.error(err)}
 })
+
 
 app.listen(port, ()=>{
     console.log(`server started at port ${port}`);
