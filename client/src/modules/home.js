@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import "../stylesheets/home.css"
 import Newsletter from "../components/Newsletter/Newsletter"
+import imgNews from '../img/icons/home/news.svg'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (){
@@ -32,7 +33,21 @@ export default function (){
                 </div>
             </section>
 
-            <section>
+            <section id="cards">
+                <div>Aqui nós falamos sobre:</div>
+                <a href="#news">
+                    <div>
+                        <img src={imgNews} alt="sla"/>
+                    </div>
+                </a>
+                <a href="/games">
+                    <div>
+                        {/* <img src={} /> */}
+                    </div>
+                </a>
+            </section>
+
+            <section id="news">
                 <Newsletter all={noti} />
             </section>
         </div>
