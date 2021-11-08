@@ -21,7 +21,10 @@ div.gameRow--itemarea{
     overflow: hidden;
     transform: scale(.9);
     box-shadow: 3px 3px 7px #000;
-    border-radius: 10px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 0;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 15px;
     transition: .3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 div.gameRow--itemarea:hover{
@@ -48,26 +51,40 @@ div.gameRow--itemarea:hover{
 /*.local-photo-init div#blur{
     align-content: center;
 }*/
-/*div#blur{
 
-}*/
+span.title{
+    margin-top: -50px;
+    position: fixed;
+    opacity: 0;
+    text-align: left;
+    color: #000008;
+    font-weight: bolder;
+    transition: .4s;
+    -webkit-text-stroke: .4px #fff
+}
+div.gameRow--itemarea:hover span.title{
+    opacity: 1;
+    transition: .4s;
+}
 div#content{
     display: block;
     width: 99%;
     max-width: 900px;
     margin: auto;
 }
-h1#title-main-uni{
-    text-align: right;
+div#title-main-uni{
     max-width: 500px;
     display: block;
+}
+div#title-main-uni h1{
+    text-align: right;
 }
 div#requirements{
     font-size: small;
     background-color: #333;
     padding: 10px;
     height: 250px;
-    width: 300px;
+    max-width: 300px;
     overflow-y: scroll;
     margin: auto;
 }
@@ -89,8 +106,25 @@ div#content{
     display: block;
     
 }*/
+
+div#short-aval{
+    max-width: 500px;
+    margin: auto;
+    margin-top: 5px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: #333;
+}
+img#starsvg{
+    width: 200px;
+    
+}
 @media screen and (max-width: 300px){
-    h1#title-main-uni{
+    div#title-main-uni h1{
         font-size: 1.9em;
     }
 }

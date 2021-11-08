@@ -1,5 +1,19 @@
 @charset "utf-8";
-
-/*div#footer{
-    
-}*/
+*{
+    color: #fff;
+}
+.spacer{
+    background-image: url('../img/home/layered-waves-haikei.svg');
+    background-size: cover;
+    background-position: center;
+    aspect-ratio: 900/242;
+    width: 100%;
+}
+.content-foot{
+    background-color: #f31173;
+    padding: 20px;
+    padding-bottom: 40px;
+}
+.content-foot > div#agrade > ul{
+    margin-bottom: -20px;
+}

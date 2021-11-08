@@ -13,11 +13,12 @@ import Footer from "./modules/footer"
 import About from "./modules/about"
 import Home from "./modules/home"
 import Game from "./modules/game"
+import News from './modules/news';
 
 function App() {
   return (
     <div id="appinter">
-      <Router  forceRefresh={true}>
+      <Router /* forceRefresh={true}*/>
         <nav id="menu">
           <ul id="nav">
             <li>
@@ -46,6 +47,9 @@ function App() {
               <Route path="/game">
                 <Game />
               </Route>
+              <Route path="/news">
+                <News />
+              </Route>
               <Route path="/">
                 <div className="innerface">
                   <Home />
@@ -54,7 +58,6 @@ function App() {
               
             </Switch>
           </div>
-        <hr className="foot"/>
       </Router>
       <Footer />
     </div>

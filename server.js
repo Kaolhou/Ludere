@@ -8,6 +8,8 @@ const handlebars = require('express-handlebars')
 const db = require('./modules/database')
 const auth = require("./modules/auth");
 const post = require('./modules/post');
+const news = require('./modules/news');
+const { create } = require('express-handlebars');
 
 app.engine('handlebars', handlebars({dafaultLayout: 'main'}))
 app.set('view engine', 'handlebars')
@@ -104,26 +106,29 @@ app.post('/add', async(req,res)=>{
     const title = req.body.Ntitle
     const aval = req.body.Naval.split('\r\n').join('\n')
     const url = req.body.Nyou
-    /*aval.map((para)=>{
-        console.log('- '+para)
-    })*/
+    const stars = req.body.Nstars
+    const fras = req.body.Nnote
     try {
         post.create({
             id: id,
             title: title,
             descri: aval,
-            youturl: url
+            youturl: url,
+            stars: stars,
+            fras: fras
         })
-        res.send("post created")
+        res.send("post created successfully")
     } catch (error) {
         res.send(error)
     }
 })
 
-app.post('/admin', async (req,res)=>{
+app.post('/admin?', async (req,res)=>{
+    const prot = req.query.r
     try {
         if(await auth(req.body.user, req.body.pass)){
-            res.render('postman')
+            if(prot != 'postman' && prot != "newsman") return res.send('unexistent protocol')
+            res.render(prot)
         }else{
             res.send('usuário ou senha incorretos')
         }
@@ -157,6 +162,43 @@ app.get('/update?', async (req, res)=>{
         res.send(error)
     }
 })
+
+app.get('/news',async (req, res)=>{
+    try {
+        res.send(await news.findAll({
+            order: [['id', 'DESC']],
+            limit: 4
+        }))
+    } catch (err) {
+        console.error(err)
+    }
+    
+})
+
+app.get('/news/:id',async (req, res)=>{
+    const id = req.params.id
+    
+    res.send(await news.findAll({
+        where: {id}
+    }))
+})
+
+app.post('/news',(req,res)=>{
+    const titulo = req.body.Ntitle
+    const destaque = req.body.Ndest
+    const cont = req.body.Ncont
+    const fontes = req.body.Nfontes.split(' ')
+    try {
+        news.create({
+            titulo,
+            destaque,
+            cont,
+            fontes
+        })
+        res.send('post created successfully')
+    } catch (error) {console.error(err)}
+})
+
 
 app.listen(port, ()=>{
     console.log(`server started at port ${port}`);
