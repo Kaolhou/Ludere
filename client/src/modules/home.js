@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react"
 import "../stylesheets/home.css"
 import Newsletter from "../components/Newsletter/Newsletter"
-import imgNews from '../img/icons/home/news.svg'
+import lupaImg from '../img/icons/home/lupa.png'
+import searchImg from '../img/icons/home/news.png'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (){
@@ -34,17 +35,29 @@ export default function (){
             </section>
 
             <section id="cards">
-                <div>Aqui nós falamos sobre:</div>
-                <a href="#news">
-                    <div>
-                        <img src={imgNews} alt="sla"/>
-                    </div>
-                </a>
-                <a href="/games">
-                    <div>
-                        {/* <img src={} /> */}
-                    </div>
-                </a>
+                <span id="talk">Aqui nós falamos sobre:</span>
+                <div className="container-home-search">
+                    <a href="/games">
+                        <div className="item yellow-home">
+                            <div>
+                                <img src={lupaImg} alt="sla"/>
+                            </div>
+                            <div>
+                                Reviews de Jogos
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#news">
+                        <div className="item pink-home">
+                            <div>
+                                <img src={searchImg} alt="sla"/>
+                            </div>
+                            <div>
+                                Notícias de Jogos
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </section>
 
             <section id="news">

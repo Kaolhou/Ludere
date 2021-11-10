@@ -20,10 +20,51 @@ div#bababoi{
     height: 300px;
 }
 
-section#cards div{
+section#cards a div.item{
     margin: auto;
+    width: 150px;
+    height: 150px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #404040;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    margin: 15px 10px;
 }
 
+section#cards a div.item div{
+    color: #404040;
+    text-decoration: none;
+    font-weight: bold;
+}
+.yellow-home{
+    background-color: #f2e029;
+}
+
+.pink-home{
+    background-color: #f31173;
+}
+
+section#cards div.container-home-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section#cards a div img{
+    width: 60px;
+}
+
+span#talk{
+    text-align: center;
+    display: block;
+    margin: 15px 0;
+    font-size: 25px;
+    color: #ffffffb9;
+}
 @media screen and (max-width: 961px){
     article.text{
         max-width: 800px;
