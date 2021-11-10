@@ -9,7 +9,7 @@ function GameRow({title, item, fcla}){
     //const [numScroll, setNumScroll] = useState(0)
     return(
         <div className={fcla}>
-            <h2>{title}</h2>
+            <h2 className="pop">{title}</h2>
             <div className="gameRow--left" onClick={()=>{
                 let x = scrollX + 200
                 //console.log(Math.round(window.innerWidth / 2))

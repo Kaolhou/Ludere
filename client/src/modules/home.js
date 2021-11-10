@@ -20,7 +20,7 @@ export default function (){
         <div>
 
             <section id="cont">
-                <h2>Quem somos nós</h2>
+                <h1>Olá!<br />Somos a ludere</h1>
                 <div id="home-conteiner">
                     <article className="text">
                         <p>Nós somos um equipe pequena de programadores, pesquisadores e entusiastas do mundo dos games que busca a construção e o aperfeiçoamento dessa plataforma digital, presando única e exclusivamente pela verdade e a realidade.</p>

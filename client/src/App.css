@@ -8,6 +8,10 @@
   font-family: Staatliches;
   src: url("./fonts/Staatliches/Staatliches-Regular.ttf");
 }
+@font-face {
+  font-family: Poppings;
+  src: url("./fonts/Poppngs/Poppins-Bold.ttf");
+}
 *{
   font-family: Inter;
   
