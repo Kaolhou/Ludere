@@ -60,7 +60,11 @@ span.title{
     color: #000008;
     font-weight: bolder;
     transition: .4s;
-    -webkit-text-stroke: .4px #fff
+    text-shadow: 
+               -1px -1px 0px #FFF, 
+               -1px 1px 0px #FFF,                    
+                1px -1px 0px #FFF,                  
+                1px 0px 0px #FFF;
 }
 div.gameRow--itemarea:hover span.title{
     opacity: 1;
