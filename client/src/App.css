@@ -10,11 +10,11 @@
 }
 @font-face {
   font-family: Poppings;
-  src: url("./fonts/Poppngs/Poppins-Bold.ttf");
+  src: url("./fonts/Poppngs/Poppins-Medium.ttf");
 }
 *{
   font-family: Inter;
-  
+  /*line-height: 20px;*/
 }
 html {
   scroll-behavior: smooth;

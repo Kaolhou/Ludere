@@ -18,7 +18,7 @@ import News from './modules/news';
 function App() {
   return (
     <div id="appinter">
-      <Router /* forceRefresh={true}*/>
+      <Router  forceRefresh={true}>
         <nav id="menu">
           <ul id="nav">
             <li>

@@ -67,6 +67,8 @@ function Game(){
 
         //animação de scroll
         window.addEventListener('scroll', ()=>{
+            //if(window.location.pathname === startsWith('/games')) return
+            //condição para só execultar se estiver no caminho /games
             const windowTop = window.scrollY / 100
             if(windowTop > 3) return
             document.getElementById('img-main').style.filter = `blur(${windowTop}px)`
@@ -88,7 +90,7 @@ function Game(){
                 </div>
   
                 <div id="short-aval">
-                    <span className="spanaval"><img src={imgStar} alt="bababoi" id="starsvg" /></span>
+                    <span className="spanaval"><img src={imgStar} alt="imgStars" id="starsvg" /></span>
                     <span className="spanaval">{`"${avaLocal.fras}"`}</span>
                 </div>
 
