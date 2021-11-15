@@ -23,7 +23,7 @@ div.imgs{
     width: 300px;
     height: 215px;
     position: relative;
-    background: #a7a7a7;
+    background: #404040;
     margin: 30px 10px;
     padding: 20px 15px;
     display: flex;
@@ -62,6 +62,10 @@ div.imgs{
     opacity: 0;
     transition: .3s ease-in-out;
 }
+.container .card .content h2{
+    font-family: Poppings;
+    color: #f31173;
+}
 .container .card:hover .content{
     visibility: visible;
     opacity: 1;
@@ -87,3 +91,15 @@ a.icon{
     align-items: center;
     background-color:#000;
 }
+@media screen and (max-width: 400px) {
+    .container{
+      transform: scale(0.6);
+      margin: 10px 0px;
+      padding: 0px;
+
+    }
+    div.main{
+        overflow-x: hidden;
+    }
+    /*div.img*/
+  }

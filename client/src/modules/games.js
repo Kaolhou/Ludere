@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {/*useEffect, */useState} from 'react';
 import "../stylesheets/games.css"
 import GameRow from '../components/gamerow/GameRow';
 import load from '../img/home/load.gif'
@@ -8,7 +8,8 @@ import Aval from '../components/aval/aval';*/
 // eslint-disable-next-line import/no-anonymous-default-export
 export default ()=>{
     const [gameList, setGameList] = useState([])
-    useEffect(()=>{
+
+    if(gameList){
         const loadAll = async ()=>{
             try {
                 let prom = await fetch('/games')
@@ -20,7 +21,9 @@ export default ()=>{
             }
         }
         loadAll();
-    },[])
+    }else{
+        console.log(gameList)
+    }
     console.log("to no multi")
     
     return(

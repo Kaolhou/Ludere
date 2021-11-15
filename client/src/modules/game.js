@@ -80,7 +80,7 @@ function Game(){
                 <h1>{gameUni.name}</h1>
                 {gameUni.website && 
                     <div id="website">
-                        <a href={gameUni.website} target="_blank" rel="noreferrer"><img src={web} alt={gameUni.slug} className="websiteLogo" /></a>
+                        <div className="webimg"><a href={gameUni.website} target="_blank" rel="noreferrer"><img src={web} alt={gameUni.slug} className="websiteLogo" /></a></div>
                     </div>
                 }
                 </div>
@@ -106,7 +106,7 @@ function Game(){
                     </div>
                 }
 
-                {gameUni.length <= 0 &&
+                {gameUni.length <= 0 && avaLocal.length <= 0 &&
                     <div className="loading">
                         <img src={load} alt="loading" />
                     </div>        

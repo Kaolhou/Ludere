@@ -10,6 +10,13 @@ div.news-list-item{
     border-radius: 10px;
     max-width: 700px;
     transition: .3s;
+    
+}
+a{
+    text-decoration: none;
+}
+div.news-list-item > h3, div.news-list-item > h4{
+    color: #f31173;
 }
 div.news-list-item:hover{
     background-color: #404040;

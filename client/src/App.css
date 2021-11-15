@@ -107,8 +107,3 @@ div.content-foot{
   }
   
 }
-@media screen and (max-width: 400px) {
-  .container{
-    transform: scale(0.7);
-  }
-}
