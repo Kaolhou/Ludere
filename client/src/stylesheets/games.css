@@ -33,24 +33,15 @@ div.gameRow--itemarea:hover{
     box-shadow: 3px 3px 20px #000;
 }
 
-
-/*area individual*/
-/*div#view{
-
-}*/
-
-/*.local-photo-init{
-    display: flex;
-}*/
 .local-photo-init #img-main{
-    width: 99%;
     max-width: 500px;
-    display: block;
+    /*display: block;
+    margin: auto;*/
+}
+.local-photo-init{
     margin: auto;
 }
-/*.local-photo-init div#blur{
-    align-content: center;
-}*/
+
 span.title{
     margin-top: -50px;
     position: fixed;
@@ -115,10 +106,6 @@ div#content{
     margin-bottom: 20px;
     max-width: 600px;
 }
-/*div#requirements .reqpar{
-    display: block;
-    
-}*/
 
 div#short-aval{
     max-width: 500px;
@@ -128,14 +115,23 @@ div#short-aval{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     padding: 10px;
     background-color: #333;
 }
 img#starsvg{
     width: 200px;
+}
+
+div#gameheader{
+    max-width: 500px;
+    overflow: hidden;
+    padding: 0%;
+    margin: auto;
+    border-radius: 20px;
     
 }
+
 @media screen and (max-width: 300px){
     div#title-main-uni h1{
         font-size: 1.9em;

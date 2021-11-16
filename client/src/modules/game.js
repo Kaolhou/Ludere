@@ -85,7 +85,7 @@ function Game(){
                 }
                 </div>
 
-                <div className="gameheader">
+                <div id="gameheader">
                     <div className="local-photo-init">
                         <img src={`${gameUni.background_image}`} alt={gameUni.name} id="img-main" />
                     </div>
