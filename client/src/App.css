@@ -59,6 +59,11 @@ ul#nav li a:hover{
   color: #f2e029;
   transition: .3s;
 }
+ul#nav > li > img.img-logo-nav{
+  width: 70px;
+  margin-top: -10px;
+} 
+
 ul#nav li{
   display: inline-block;
   margin-top: 10px
@@ -98,6 +103,11 @@ div.content-foot{
 @media screen and (min-width: 780px) {
   ul#nav{
     justify-content: center;
+  } 
+}
+@media screen and (max-width: 350px) {
+  li.logolist{
+    display: none !important;
   }
 }
 @media screen and (min-width: 650px) {

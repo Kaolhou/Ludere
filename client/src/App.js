@@ -21,6 +21,9 @@ function App() {
       <Router  forceRefresh={true}>
         <nav id="menu">
           <ul id="nav">
+            <li className="logolist">
+              <img src="/logo.svg" className="img-logo-nav" alt="" />
+            </li>
             <li>
               <Link to="/" className="links">Início</Link>
             </li>

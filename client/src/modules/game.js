@@ -85,13 +85,14 @@ function Game(){
                 }
                 </div>
 
-                <div className="local-photo-init">
-                    <img src={`${gameUni.background_image}`} alt={gameUni.name} id="img-main" />
-                </div>
-  
-                <div id="short-aval">
-                    <span className="spanaval"><img src={imgStar} alt="imgStars" id="starsvg" /></span>
-                    <span className="spanaval">{`"${avaLocal.fras}"`}</span>
+                <div className="gameheader">
+                    <div className="local-photo-init">
+                        <img src={`${gameUni.background_image}`} alt={gameUni.name} id="img-main" />
+                    </div>
+                    <div id="short-aval">
+                        <span className="spanaval"><img src={imgStar} alt="imgStars" id="starsvg" /></span>
+                        <span className="spanaval">{`"${avaLocal.fras}"`}</span>
+                    </div>
                 </div>
 
                 <div id="content">
