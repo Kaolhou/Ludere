@@ -4,7 +4,9 @@
     left: -60%;
 }
 h2.pop{
-    font-family: Poppings;
+    font-family: Staatliches;
+    color: #f2e029;
+    font-weight: lighter;
 }
 .gameRow--left,
 .gameRow--right{

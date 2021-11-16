@@ -10,14 +10,15 @@
 }
 @font-face {
   font-family: Poppings;
-  src: url("./fonts/Poppngs/Poppins-Medium.ttf");
+  src: url("./fonts/Poppngs/Poppins-Regular.ttf");
 }
 *{
-  font-family: Inter;
-  /*line-height: 20px;*/
+  font-family: Poppings;
+  
 }
-html {
+html:not(h1,h2,h3,h4){
   scroll-behavior: smooth;
+  line-height: 20px;
 }
 
 :target {
