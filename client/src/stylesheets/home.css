@@ -32,22 +32,27 @@ section#cards a div.item{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #404040;
+    color: #000;
     border-radius: 20px;
     flex-wrap: wrap;
     margin: 15px 10px;
 }
 
 section#cards a div.item div{
-    color: #404040;
+    text-align: center;
+    font-size: 13pt;
+    color: #000008;
     text-decoration: none;
     font-weight: bold;
 }
 .yellow-home{
     background-color: #f2e029;
+    box-shadow: inset -10px 10px 30px 10px #00000055;
 }
 
 .pink-home{
+    box-shadow: inset -10px 10px 30px 10px #00000055;
+
     background-color: #f31173;
 }
 

@@ -22,7 +22,7 @@ export default function (){
                         </div>
                         <div className="content">
                             <h2>André Mendes da Rocha</h2>
-                            <p>Programador Full-Stack</p>
+                            <p>Programador</p>
                             <p>
                                 <a href="https://www.facebook.com/profile.php?id=100009522850054" target="_blank" rel="noreferrer" className="icon">
                                     <img src={faceicon} alt="face" />
@@ -47,6 +47,7 @@ export default function (){
                         </div>
                         <div className="content">
                             <h2>Bruno Guilherme Queiroz</h2>
+                            <p>Redator</p>
                             <p>
                                 <a href="https://www.facebook.com/bruno.queiroz.92351995" target="_blank" rel="noreferrer" className="icon">
                                     <img src={faceicon} alt="face" />
@@ -68,7 +69,7 @@ export default function (){
                         </div>
                         <div className="content">
                             <h2>Jonas Viana Sales</h2>
-                            <p>Programador Full-Stack:</p>
+                            <p>Programador e Redator</p>
                             <p>
                                 <a href="https://www.facebook.com/jonas.viana.739" target="_blank" rel="noreferrer" className="icon">
                                     <img src={faceicon} alt="face" />
@@ -93,7 +94,7 @@ export default function (){
                         </div>
                         <div className="content">
                         <h2>Kaio Pereira Araújo</h2>
-                            <p>Programador Full-Stack:</p>
+                        <p>Designer</p>
                             <p>
                                 <a href="https://www.facebook.com/kaio.pereira.127201" target="_blank" rel="noreferrer" className="icon">
                                     <img src={faceicon} alt="face" />
@@ -118,7 +119,7 @@ export default function (){
                         </div>
                         <div className="content">
                         <h2>Leandro Reis Santana</h2>
-                            <p>Programador Full-Stack:</p>
+                        <p>Redator</p>
                             <p>
                                 <a href="https://www.facebook.com/leandrorinho.silva" target="_blank" rel="noreferrer" className="icon">
                                     <img src={faceicon} alt="face" />
@@ -140,7 +141,7 @@ export default function (){
                         </div>
                         <div className="content">
                         <h2>Marco Antônio Romagnoli Leme</h2>
-                            <p>Programador Full-Stack:</p>
+                        <p>Redator e Revisor</p>
                             <p>
                                 <a href="https://www.facebook.com/profile.php?id=100033250624062" target="_blank" rel="noreferrer" className="icon">
                                     <img src={faceicon} alt="face" />

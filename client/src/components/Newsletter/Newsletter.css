@@ -15,7 +15,11 @@ div.news-list-item{
 a{
     text-decoration: none;
 }
-div.news-list-item > h3, div.news-list-item > h4{
+div.news-list-item > h4{
+    color: #fff;
+}
+
+div.news-list-item > h3{
     color: #f31173;
 }
 div.news-list-item:hover{
