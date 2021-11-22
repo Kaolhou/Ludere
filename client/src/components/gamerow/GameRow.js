@@ -37,8 +37,11 @@ function GameRow({title, item, fcla}){
                 {item.results.length > 0 && item.results.map((item, key) =>(
                     <a href={`game?id=${item.id}`} key={key} className="gameRow--itemLink">
                         <div className="gameRow--itemarea" key={key}>
-                            <div className="image">
-                                <img src={`${item.background_image}`} alt={`${item.name}`}/>
+                            <div className="image-div-conteiner-games">
+                                <div className="image">
+                                    <img src={`${item.background_image}`} alt={`${item.name}`}/>
+                                    
+                                </div>
                                 <span className="title">{item.name}</span>
                             </div>
                         </div>

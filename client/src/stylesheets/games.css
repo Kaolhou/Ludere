@@ -12,8 +12,12 @@ div.gameRow--listarea{
 div.image img{
     height: 200px;
     position: relative;
-    top: -50%;
-    left: -30%;
+    /*top: -50%;
+    left: -30%;*/
+}
+div.image{
+    display: flex;
+    justify-content: center;
 }
 div.gameRow--itemarea{
     width: 200px;
@@ -43,7 +47,9 @@ div.gameRow--itemarea:hover{
 }
 
 span.title{
-    margin-top: -50px;
+    /*margin-top: -50px;*/
+    bottom: 6%;
+    left: 3%;
     position: fixed;
     opacity: 0;
     text-align: left;
