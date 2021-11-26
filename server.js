@@ -199,6 +199,9 @@ app.post('/news',(req,res)=>{
     } catch (error) {console.error(err)}
 })
 
+app.get('/test', (req, res)=>{
+    res.send('5')
+})
 
 app.listen(port, ()=>{
     console.log(`server started at port ${port}`);

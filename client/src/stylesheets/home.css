@@ -12,11 +12,13 @@ article.text{
 article.homeimg{
     display: flex;
     align-items: center;
+    max-width: 400px
 }
 div#home-conteiner{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 60px;
 }
 div#bababoi{
     background-color: blue;
@@ -74,10 +76,14 @@ span#talk{
     font-size: 25px;
     color: #ffffffb9;
 }
+img#img-home-init{
+    width: 100%;
+    
+}
 @media screen and (max-width: 1001px){
     article.text{
-        max-width: 800px;
-        min-width: 300px;
+        max-width: 600px;
+        min-width: 260px;
         margin: 10px;
     }
 }

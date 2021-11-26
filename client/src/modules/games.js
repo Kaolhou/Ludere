@@ -16,8 +16,7 @@ export default ()=>{
             })
         })
     },[])
-
-    console.log("to no multi")
+    //console.log("to no multi")
     
     return(
         <div className="page">

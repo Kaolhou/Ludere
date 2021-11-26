@@ -3,6 +3,7 @@ import "../stylesheets/home.css"
 import Newsletter from "../components/Newsletter/Newsletter"
 import lupaImg from '../img/icons/home/lupa.png'
 import searchImg from '../img/icons/home/news.png'
+import empty from '../img/home/template-empty.jpg'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (){
@@ -28,8 +29,8 @@ export default function (){
                         Por isso, nos buscamos realizar um trabalho sério, com analises sérias, buscando principalmente a opinião de gamers e youtubers que possuem experiencia no assunto.</p>
                     </article>
                     <article className="homeimg">
-                        {/*<img src="#" alt="" />*/ }
-                        <div id="bababoi"></div>
+                        <img src={empty} alt="" id="img-home-init" />
+                        {/*<div id="bababoi"></div>*/}
                     </article>
                 </div>
             </section>

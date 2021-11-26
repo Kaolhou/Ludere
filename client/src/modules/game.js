@@ -35,7 +35,9 @@ function Game(){
                 })
                 
                 console.log(listG)
-                setPlatform(plat)
+                if(plat.length > 0){
+                    setPlatform(plat)
+                }
                 
                 //local data
                 const promL = await fetch(`/local/${id}`)
