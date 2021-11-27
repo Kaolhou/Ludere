@@ -34,7 +34,7 @@ function Game(){
                     return item.platform.id === 4
                 })
                 
-                console.log(listG)
+                console.log(plat)
                 if(plat.length > 0){
                     setPlatform(plat)
                 }
@@ -64,17 +64,18 @@ function Game(){
             }
         }
         loadAll();
+        //atualizar descrição do jogo
         document.getElementById('content').innerText = avaLocal.descri
     },[id, avaLocal.descri])
 
         //animação de scroll
-        window.addEventListener('scroll', ()=>{
+        /*window.addEventListener('scroll', ()=>{
             //if(window.location.pathname === startsWith('/games')) return
             //condição para só execultar se estiver no caminho /games
             const windowTop = window.scrollY / 100
             if(windowTop > 3) return
             document.getElementById('img-main').style.filter = `blur(${windowTop}px)`
-        })
+        })*/
 
         return(
             <div id="view">
@@ -101,7 +102,7 @@ function Game(){
                     {avaLocal.descri}
                 </div>
 
-                {platform[0].platform.id === 4 &&
+                {platform[0].platform.id === 4 && platform[0].requirements.minimum && platform[0].requirements.recommended &&
                     <div id="requirements">
                         <strong>Requisitos para PC:</strong>
                         <p>{platform[0].requirements.minimum}</p>
