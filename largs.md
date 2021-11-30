@@ -17,15 +17,15 @@ games
 1447 - Deus Ex: Mankind Divided
 41494 - Cyberpunk 2077
 3498 - Grand Theft Auto V
-5286 - Tomb Raider (2013)
+--5286 - Tomb Raider (2013)
 12020 - Left 4 Dead 2
 4291 - Counter-Strike: Global Offensive
 4062 - BioShock Infinite
 28 - Red Dead Redemption 2
 4286 - BioShock
 1030 - Limbo
-3272 - Rocket League
-422 - Terraria
+--3272 - Rocket League
+--422 - Terraria
 3612 - Hotline Miami
 3790 - Outlast
 13668 - Amnesia: The Dark Descent
@@ -51,3 +51,4 @@ games
 19710 - Half-Life 2: Episode One
 19709 - Half-Life 2: Episode Two
 4332 - Spec Ops: The Line
+290856 - Apex Legends

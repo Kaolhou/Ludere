@@ -89,9 +89,14 @@ div#requirements{
     margin: auto;
 }
 div#website{
-    width: 200px;
-    margin: auto;
+    margin-bottom: 10px;
     padding: 5px;
+    display: flex;
+    justify-content:center;
+
+}
+div#website > span{
+    margin: 0 10px;
 }
 
 div#website > .webimg{

@@ -3,6 +3,7 @@ import load from '../img/home/load.gif'
 import web from "../img/icons/website.png"
 import '../stylesheets/games.css'
 import stars from './stars'
+import yout from '../img/icons/home/youtube.png'
 //import Aval from '../components/aval/aval';
 
 function Game(){
@@ -42,6 +43,7 @@ function Game(){
                 //local data
                 const promL = await fetch(`/local/${id}`)
                 var listL = await promL.json()
+                console.log(listL)
 
                 //alteração de imagem para número de estrelas
                 switch(listL[0].stars){
@@ -69,6 +71,10 @@ function Game(){
     },[id, avaLocal.descri])
 
         //animação de scroll
+        /*
+        retiramos por um erro devido à permanência do addEventListener nas outras páginas, que na existência
+        do id="img-main", resultava em erro
+        */
         /*window.addEventListener('scroll', ()=>{
             //if(window.location.pathname === startsWith('/games')) return
             //condição para só execultar se estiver no caminho /games
@@ -81,13 +87,21 @@ function Game(){
             <div id="view">
                 <div id="title-main-uni">
                 <h1>{gameUni.name}</h1>
-                {gameUni.website && 
+                
+                </div>
+                <div id="icons">
+                {(gameUni.website || avaLocal.youturl !== "") && 
                     <div id="website">
-                        <div className="webimg"><a href={gameUni.website} target="_blank" rel="noreferrer"><img src={web} alt={gameUni.slug} className="websiteLogo" /></a></div>
+                        {gameUni.website &&
+                            <span className="webimg"><a href={gameUni.website} target="_blank" rel="noreferrer"><img src={web} alt={gameUni.slug} className="websiteLogo" /></a></span>
+                        }
+                        {avaLocal.youturl !== "" &&
+                            <span className="webimg"><a href={avaLocal.youturl} target="_blank" rel="noreferrer"><img src={yout} alt={gameUni.slug} className="websiteLogo" /></a></span>
+                        }
+                        
                     </div>
                 }
                 </div>
-
                 <div id="gameheader">
                     <div className="local-photo-init">
                         <img src={`${gameUni.background_image}`} alt={gameUni.name} id="img-main" />
