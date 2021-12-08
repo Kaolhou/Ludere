@@ -86,43 +86,44 @@ function Game(){
         return(
             <div id="view">
                 <div id="title-main-uni">
-                <h1>{gameUni.name}</h1>
+                    <h1>{gameUni.name}</h1> 
+                </div>
                 
-                </div>
-                <div id="icons">
-                {(gameUni.website || avaLocal.youturl !== "") && 
-                    <div id="website">
-                        {gameUni.website &&
-                            <span className="webimg"><a href={gameUni.website} target="_blank" rel="noreferrer"><img src={web} alt={gameUni.slug} className="websiteLogo" /></a></span>
-                        }
-                        {avaLocal.youturl !== "" &&
-                            <span className="webimg"><a href={avaLocal.youturl} target="_blank" rel="noreferrer"><img src={yout} alt={gameUni.slug} className="websiteLogo" /></a></span>
-                        }
-                        
+                <header>
+                    <div id="gameheader">
+                        <div className="local-photo-init">
+                            <img src={`${gameUni.background_image}`} alt={gameUni.name} id="img-main" />
+                        </div>
+                        <div id="short-aval">
+                            <span className="spanaval"><img src={imgStar} alt="imgStars" id="starsvg" /></span>
+                            <span className="spanaval">{`"${avaLocal.fras}"`}</span>
+                        </div>
                     </div>
-                }
-                </div>
-                <div id="gameheader">
-                    <div className="local-photo-init">
-                        <img src={`${gameUni.background_image}`} alt={gameUni.name} id="img-main" />
-                    </div>
-                    <div id="short-aval">
-                        <span className="spanaval"><img src={imgStar} alt="imgStars" id="starsvg" /></span>
-                        <span className="spanaval">{`"${avaLocal.fras}"`}</span>
-                    </div>
-                </div>
+                    {platform[0].platform.id === 4 && platform[0].requirements.minimum && platform[0].requirements.recommended &&
+                        <div id="requirements">
+                            <strong>Requisitos para PC:</strong>
+                            <p>{platform[0].requirements.minimum}</p>
+                            <p>{platform[0].requirements.recommended}</p>
+                        </div>
+                    }
+                </header>
 
                 <div id="content">
                     {avaLocal.descri}
                 </div>
 
-                {platform[0].platform.id === 4 && platform[0].requirements.minimum && platform[0].requirements.recommended &&
-                    <div id="requirements">
-                        <strong>Requisitos para PC:</strong>
-                        <p>{platform[0].requirements.minimum}</p>
-                        <p>{platform[0].requirements.recommended}</p>
-                    </div>
-                }
+                <div id="icons">
+                    {(gameUni.website || avaLocal.youturl !== "") && 
+                        <div id="website">
+                            {gameUni.website &&
+                                <span className="webimg"><a href={gameUni.website} target="_blank" rel="noreferrer"><img src={web} alt={gameUni.slug} className="websiteLogo" /></a></span>
+                            }
+                            {avaLocal.youturl !== "" &&
+                                <span className="webimg"><a href={avaLocal.youturl} target="_blank" rel="noreferrer"><img src={yout} alt={gameUni.slug} className="websiteLogo" /></a></span>
+                            }
+                        </div>
+                    }
+                </div>
 
                 {gameUni.length <= 0 && avaLocal.length <= 0 &&
                     <div className="loading">

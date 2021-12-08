@@ -86,7 +86,7 @@ div#requirements{
     height: 250px;
     max-width: 300px;
     overflow-y: scroll;
-    margin: auto;
+    margin: 10px;
 }
 div#website{
     margin-bottom: 10px;
@@ -135,12 +135,17 @@ img#starsvg{
 }
 
 div#gameheader{
-    max-width: 500px;
+    max-width: 375px;
     overflow: hidden;
     padding: 0%;
-    margin: auto;
     border-radius: 20px;
-    
+    margin: 10px;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 @media screen and (max-width: 300px){
