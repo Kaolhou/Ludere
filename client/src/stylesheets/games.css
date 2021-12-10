@@ -71,6 +71,8 @@ div#content{
     width: 99%;
     max-width: 900px;
     margin: auto;
+    text-align: justify;
+    line-height: 1.4em;
 }
 div#title-main-uni{
     max-width: 500px;
