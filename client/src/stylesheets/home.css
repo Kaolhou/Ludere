@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+h1#hi{
+    max-width: 900px;
+    font-size: 30pt;
+    margin: 20px 50px 0px 50px!important;
+    line-height: 35px;
+    /*max-width: 600px;*/
+    margin: auto;
+}
+
 section#cont{
     max-width: 1000px;
     margin: auto;
@@ -49,11 +58,11 @@ section#cards a div.item div{
 }
 .yellow-home{
     background-color: #f2e029;
-    box-shadow: inset -10px 10px 30px 10px #00000055;
+    box-shadow: inset -10px 10px 30px 10px #00000035;
 }
 
 .pink-home{
-    box-shadow: inset -10px 10px 30px 10px #00000055;
+    box-shadow: inset -10px 10px 30px 10px #00000035;
 
     background-color: #f31173;
 }

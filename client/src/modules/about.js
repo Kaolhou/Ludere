@@ -4,7 +4,7 @@ import jonas from "../img/profile/jonas.png"
 import bruno from "../img/profile/bruno.jpg"
 import marco from "../img/profile/MarcoR.jpg"
 import leandro from "../img/profile/leandro.jpg"
-import kaio from "../img/profile/kaio.jpg"
+import kaio from "../img/profile/kaio.jpeg"
 import faceicon from "../img/icons/face128128.svg"
 import githubicon from "../img/icons/github128128.svg"
 import instaicon from "../img/icons/insta128128.svg"
@@ -46,7 +46,7 @@ export default function (){
                             <img src={bruno} alt="aoba" className="person"/>
                         </div>
                         <div className="content">
-                            <h2>Bruno Guilherme Queiroz</h2>
+                            <h2>Bruno Guilherme Queiroz da Silva </h2>
                             <p>Redator</p>
                             <p>
                                 <a href="https://www.facebook.com/bruno.queiroz.92351995" target="_blank" rel="noreferrer" className="icon">
@@ -93,7 +93,7 @@ export default function (){
                             <img src={kaio} alt="aoba" className="person"/>
                         </div>
                         <div className="content">
-                        <h2>Kaio Pereira Araújo</h2>
+                        <h2>Kaio Pereira de Araújo</h2>
                         <p>Designer</p>
                             <p>
                                 <a href="https://www.facebook.com/kaio.pereira.127201" target="_blank" rel="noreferrer" className="icon">

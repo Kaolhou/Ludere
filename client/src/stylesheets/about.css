@@ -99,6 +99,7 @@ a.icon{
 
     }
     div.main{
+        margin-top: 20px;
         overflow-x: hidden;
     }
     /*div.img*/

@@ -9,7 +9,7 @@ function Newsletter({all}){
             {all.map((item, key)=>(
                 <a href={`/news?id=${item.id}`} key={key}>
                     <div className="news-list-item">
-                        <h3>{item.titulo}</h3>
+                        <h3>{item.titulo.toUpperCase()}</h3>
                         <h4>{item.destaque}</h4>
                     </div>
                 </a>

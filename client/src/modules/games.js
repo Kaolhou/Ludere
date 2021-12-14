@@ -1,4 +1,4 @@
-import {useEffect, useState} from 'react';
+import {/*useEffect,*/ useState} from 'react';
 import "../stylesheets/games.css"
 import GameRow from '../components/gamerow/GameRow';
 import load from '../img/home/load.gif'
@@ -9,13 +9,13 @@ import Aval from '../components/aval/aval';*/
 export default ()=>{
     const [gameList, setGameList] = useState([])
 
-    useEffect(()=>{
+    //useEffect(()=>{
         fetch('/games').then(response=>{
             response.json().then(data=>{
                 setGameList(data)
             })
         })
-    },[])
+    //},[])
     //console.log("to no multi")
     
     return(

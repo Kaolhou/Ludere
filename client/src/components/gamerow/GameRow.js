@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import { ReactComponent as NavigateBeforeIcon } from './assets/left.svg';
+import { ReactComponent as NavigateNextIcon } from './assets/right.svg';
 
 import './GameRow.css'
 
