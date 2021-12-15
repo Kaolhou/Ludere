@@ -1,5 +1,14 @@
 @charset "utf-8";
 
+h1#hi{
+    max-width: 900px;
+    font-size: 30pt;
+    margin: 20px 50px 0px 50px!important;
+    line-height: 35px;
+    /*max-width: 600px;*/
+    margin: auto;
+}
+
 section#cont{
     max-width: 1000px;
     margin: auto;
@@ -7,12 +16,18 @@ section#cont{
 article.text{
     max-width: 500px;
     min-width: 300px;
-    margin: 10px;
+    margin: 30px;
+}
+article.homeimg{
+    display: flex;
+    align-items: center;
+    max-width: 400px
 }
 div#home-conteiner{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    margin-bottom: 60px;
 }
 div#bababoi{
     background-color: blue;
@@ -20,14 +35,64 @@ div#bababoi{
     height: 300px;
 }
 
-section#cards div{
+section#cards a div.item{
     margin: auto;
+    width: 150px;
+    height: 150px;
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    border-radius: 20px;
+    flex-wrap: wrap;
+    margin: 15px 10px;
 }
 
-@media screen and (max-width: 961px){
+section#cards a div.item div{
+    text-align: center;
+    font-size: 13pt;
+    color: #000008;
+    text-decoration: none;
+    font-weight: bold;
+}
+.yellow-home{
+    background-color: #f2e029;
+    box-shadow: inset -10px 10px 30px 10px #00000035;
+}
+
+.pink-home{
+    box-shadow: inset -10px 10px 30px 10px #00000035;
+
+    background-color: #f31173;
+}
+
+section#cards div.container-home-search{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+section#cards a div img{
+    width: 60px;
+}
+
+span#talk{
+    text-align: center;
+    display: block;
+    margin: 15px 0;
+    font-size: 25px;
+    color: #ffffffb9;
+}
+img#img-home-init{
+    width: 100%;
+    
+}
+@media screen and (max-width: 1001px){
     article.text{
-        max-width: 800px;
-        min-width: 300px;
+        max-width: 600px;
+        min-width: 260px;
         margin: 10px;
     }
 }

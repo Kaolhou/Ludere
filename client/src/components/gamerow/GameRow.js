@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
-import NavigateBeforeIcon from '@material-ui/icons/NavigateBefore';
-import NavigateNextIcon from '@material-ui/icons/NavigateNext';
+import { ReactComponent as NavigateBeforeIcon } from './assets/left.svg';
+import { ReactComponent as NavigateNextIcon } from './assets/right.svg';
 
 import './GameRow.css'
 
@@ -9,7 +9,7 @@ function GameRow({title, item, fcla}){
     //const [numScroll, setNumScroll] = useState(0)
     return(
         <div className={fcla}>
-            <h2>{title}</h2>
+            <h2 className="pop">{title}</h2>
             <div className="gameRow--left" onClick={()=>{
                 let x = scrollX + 200
                 //console.log(Math.round(window.innerWidth / 2))
@@ -37,8 +37,11 @@ function GameRow({title, item, fcla}){
                 {item.results.length > 0 && item.results.map((item, key) =>(
                     <a href={`game?id=${item.id}`} key={key} className="gameRow--itemLink">
                         <div className="gameRow--itemarea" key={key}>
-                            <div className="image">
-                                <img src={`${item.background_image}`} alt={`${item.name}`}/>
+                            <div className="image-div-conteiner-games">
+                                <div className="image">
+                                    <img src={`${item.background_image}`} alt={`${item.name}`}/>
+                                    
+                                </div>
                                 <span className="title">{item.name}</span>
                             </div>
                         </div>

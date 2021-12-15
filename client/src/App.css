@@ -4,12 +4,21 @@
   font-family: Inter;
   src: url("./fonts/Inter/Inter-Regular.ttf");
 }
+@font-face {
+  font-family: Staatliches;
+  src: url("./fonts/Staatliches/Staatliches-Regular.ttf");
+}
+@font-face {
+  font-family: Poppings;
+  src: url("./fonts/Poppngs/Poppins-Regular.ttf");
+}
 *{
-  font-family: Inter;
+  font-family: Poppings;
   
 }
-html {
+html:not(h1,h2,h3,h4){
   scroll-behavior: smooth;
+  line-height: 20px;
 }
 
 :target {
@@ -51,6 +60,11 @@ ul#nav li a:hover{
   color: #f2e029;
   transition: .3s;
 }
+ul#nav > li > img.img-logo-nav{
+  width: 70px;
+  margin-top: -7px;
+} 
+
 ul#nav li{
   display: inline-block;
   margin-top: 10px
@@ -58,6 +72,7 @@ ul#nav li{
 }
 
 div.innerface{
+  margin-top: 20px;
   padding: 15px;
 }
 div.innerface{
@@ -90,6 +105,11 @@ div.content-foot{
 @media screen and (min-width: 780px) {
   ul#nav{
     justify-content: center;
+  } 
+}
+@media screen and (max-width: 350px) {
+  li.logolist{
+    display: none !important;
   }
 }
 @media screen and (min-width: 650px) {
@@ -98,9 +118,4 @@ div.content-foot{
     justify-content: space-evenly;
   }
   
-}
-@media screen and (max-width: 400px) {
-  .container{
-    transform: scale(0.7);
-  }
 }

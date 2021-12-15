@@ -23,7 +23,7 @@ div.imgs{
     width: 300px;
     height: 215px;
     position: relative;
-    background: #a7a7a7;
+    background: #404040;
     margin: 30px 10px;
     padding: 20px 15px;
     display: flex;
@@ -40,13 +40,18 @@ div.imgs{
     height: 260px;
     top: -60px;
     left: 20px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.2)
+    box-shadow: 0 5px 25px #000000a1;
+    border-radius: 25px 0px 25px 0px;
 }
 
 .container .card .imgBox img{
     max-width: 100%;
-    border-radius: 6px;
+    border-radius: 25px 0px 25px 0px;
 }
+/*.container .card .imgBox{
+    
+    overflow: hidden;
+}*/
 .container .card .content{
     position: relative;
     margin-top: -140px;
@@ -56,6 +61,10 @@ div.imgs{
     visibility: hidden;
     opacity: 0;
     transition: .3s ease-in-out;
+}
+.container .card .content h2{
+    font-family: Poppings;
+    color: #f31173;
 }
 .container .card:hover .content{
     visibility: visible;
@@ -82,3 +91,16 @@ a.icon{
     align-items: center;
     background-color:#000;
 }
+@media screen and (max-width: 400px) {
+    .container{
+      transform: scale(0.6);
+      margin: 10px 0px;
+      padding: 0px;
+
+    }
+    div.main{
+        margin-top: 20px;
+        overflow-x: hidden;
+    }
+    /*div.img*/
+  }

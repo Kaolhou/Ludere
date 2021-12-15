@@ -10,6 +10,18 @@ div.news-list-item{
     border-radius: 10px;
     max-width: 700px;
     transition: .3s;
+    
+}
+a{
+    text-decoration: none;
+}
+div.news-list-item > h4{
+    color: #fff;
+}
+
+div.news-list-item > h3{
+    color: #f31173;
+    text-align: left;
 }
 div.news-list-item:hover{
     background-color: #404040;

@@ -1,20 +1,9 @@
 @charset "UTF-8";
 
-:root{
-    --color-theme-light1: ;
-    --color-theme-light2: ;
-    --color-theme-light3: ;
-    --color-theme-light4: ;
-
-    --color-theme-dark1: ;
-    --color-theme-dark2: ;
-    --color-theme-dark3: ;
-    --color-theme-dark4: ;
-
-    --color-theme-ok1: ;/*green*/
-    --color-theme-danger2: ;/*yellow*/
-    --color-theme-alert3: ;/*red*/
-    --color-theme-principal:
+h1,h2.staa{
+    font-family: Staatliches;
+    letter-spacing: 2px;
+    color: #f2e029;
 }
 ::-webkit-scrollbar {
     width: 12px;               /* width of the entire scrollbar */

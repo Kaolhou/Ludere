@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import Adm from './Adm'
+/*import Test from './test'*/
 
 if(window.location.pathname === "/admin"){
   ReactDOM.render(

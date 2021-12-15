@@ -25,6 +25,5 @@ yarn-error.log*
 #extras gitignore
 .env
 config.json
-#/public/index.html
 /homework
 /database

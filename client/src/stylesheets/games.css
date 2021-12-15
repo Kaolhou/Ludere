@@ -12,8 +12,12 @@ div.gameRow--listarea{
 div.image img{
     height: 200px;
     position: relative;
-    top: -50%;
-    left: -30%;
+    /*top: -50%;
+    left: -30%;*/
+}
+div.image{
+    display: flex;
+    justify-content: center;
 }
 div.gameRow--itemarea{
     width: 200px;
@@ -33,34 +37,30 @@ div.gameRow--itemarea:hover{
     box-shadow: 3px 3px 20px #000;
 }
 
-
-/*area individual*/
-/*div#view{
-
-}*/
-
-/*.local-photo-init{
-    display: flex;
-}*/
 .local-photo-init #img-main{
-    width: 99%;
-    max-width: 500px;
-    display: block;
+    width: 100%;
+    /*display: block;
+    margin: auto;*/
+}
+.local-photo-init{
     margin: auto;
 }
-/*.local-photo-init div#blur{
-    align-content: center;
-}*/
 
 span.title{
-    margin-top: -50px;
+    /*margin-top: -50px;*/
+    bottom: 6%;
+    left: 3%;
     position: fixed;
     opacity: 0;
     text-align: left;
     color: #000008;
     font-weight: bolder;
     transition: .4s;
-    -webkit-text-stroke: .4px #fff
+    text-shadow: 
+               -1px -1px 0px #FFF, 
+               -1px 1px 0px #FFF,                    
+                1px -1px 0px #FFF,                  
+                1px 0px 0px #FFF;
 }
 div.gameRow--itemarea:hover span.title{
     opacity: 1;
@@ -71,6 +71,8 @@ div#content{
     width: 99%;
     max-width: 900px;
     margin: auto;
+    text-align: justify;
+    line-height: 1.4em;
 }
 div#title-main-uni{
     max-width: 500px;
@@ -86,12 +88,27 @@ div#requirements{
     height: 250px;
     max-width: 300px;
     overflow-y: scroll;
-    margin: auto;
+    margin: 10px;
 }
 div#website{
-    width: 200px;
-    margin: auto;
+    margin-bottom: 10px;
     padding: 5px;
+    display: flex;
+    justify-content:center;
+
+}
+div#website > span{
+    margin: 0 10px;
+}
+
+div#website > .webimg{
+    background-color: #404040;
+    padding: 10px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 img.websiteLogo{
     width: 50px;
@@ -102,10 +119,6 @@ div#content{
     margin-bottom: 20px;
     max-width: 600px;
 }
-/*div#requirements .reqpar{
-    display: block;
-    
-}*/
 
 div#short-aval{
     max-width: 500px;
@@ -115,14 +128,28 @@ div#short-aval{
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-around;
-    border-radius: 10px;
+    /*border-radius: 10px;*/
     padding: 10px;
     background-color: #333;
 }
 img#starsvg{
     width: 200px;
-    
 }
+
+div#gameheader{
+    max-width: 375px;
+    overflow: hidden;
+    padding: 0%;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
 @media screen and (max-width: 300px){
     div#title-main-uni h1{
         font-size: 1.9em;

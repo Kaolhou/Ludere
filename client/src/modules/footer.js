@@ -11,9 +11,9 @@ export default function (){
                     Integrantes:
                     <ul>
                         <li>André Mendes da Rocha</li>
-                        <li>Bruno Guilherme Queiroz</li>
+                        <li>Bruno Guilherme Queiroz da Silva </li>
                         <li>Jonas Viana Sales</li>
-                        <li>Kaio Pereira Araújo</li>
+                        <li>Kaio Pereira de Araújo</li>
                         <li>Leandro Reis Santana</li>
                         <li>Marco Antônio Romagnoli Leme</li>
                     </ul>

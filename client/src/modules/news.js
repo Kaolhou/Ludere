@@ -15,23 +15,27 @@ function News(){
     useEffect(()=>{
         async function exe(){
             const prom = await fetch(`/news/${id}`)
-            setNewsInfo(await prom.json())
-            
+            const all = await prom.json()
+            setNewsInfo(all)
+
+            const newsDataIn = document.getElementById('news-cont');
+            newsDataIn.innerText = all[0].cont;
         }
         exe()
     },[id])
     console.log(newsInfo[0])
+    
     return(
         <div id="content-info">
             <h1>{newsInfo[0].titulo}</h1>
             <h2>{newsInfo[0].destaque}</h2>
-            <article>
-                {newsInfo[0].cont}
-            </article>
-            <div>
+            <hr />
+            <article id="news-cont"></article>
+            <div>Fontes:
                 <ul>
-                    {newsInfo[0].fontes.map((item)=>(
-                        <li>
+                    
+                    {newsInfo[0].fontes.map((item, key)=>(
+                        <li key={key}>
                             <a href={item} target="_blank" rel="noreferrer">{item}</a>
                         </li>
                     ))}

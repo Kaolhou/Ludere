@@ -1,7 +1,10 @@
 import { useState, useEffect } from "react"
 import "../stylesheets/home.css"
 import Newsletter from "../components/Newsletter/Newsletter"
-import imgNews from '../img/icons/home/news.svg'
+import lupaImg from '../img/icons/home/lupa.png'
+import searchImg from '../img/icons/home/news.png'
+//import empty from '../img/home/template-empty.jpg'
+import imghome from '../img/home/imghome.jpeg'
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default function (){
@@ -19,7 +22,7 @@ export default function (){
         <div>
 
             <section id="cont">
-                <h2>Quem somos nós</h2>
+                <h1 id="hi">Olá!<br />Somos a ludere</h1>
                 <div id="home-conteiner">
                     <article className="text">
                         <p>Nós somos um equipe pequena de programadores, pesquisadores e entusiastas do mundo dos games que busca a construção e o aperfeiçoamento dessa plataforma digital, presando única e exclusivamente pela verdade e a realidade.</p>
@@ -27,24 +30,36 @@ export default function (){
                         Por isso, nos buscamos realizar um trabalho sério, com analises sérias, buscando principalmente a opinião de gamers e youtubers que possuem experiencia no assunto.</p>
                     </article>
                     <article className="homeimg">
-                        {/*<img src="#" alt="" />*/ }
-                        <div id="bababoi"></div>
+                        <img src={imghome} alt="" id="img-home-init" />
+                        {/*<div id="bababoi"></div>*/}
                     </article>
                 </div>
             </section>
 
             <section id="cards">
-                <div>Aqui nós falamos sobre:</div>
-                <a href="#news">
-                    <div>
-                        <img src={imgNews} alt="sla"/>
-                    </div>
-                </a>
-                <a href="/games">
-                    <div>
-                        {/* <img src={} /> */}
-                    </div>
-                </a>
+                <span id="talk">Aqui nós falamos sobre:</span>
+                <div className="container-home-search">
+                    <a href="/games">
+                        <div className="item yellow-home">
+                            <div>
+                                <img src={lupaImg} alt="sla"/>
+                            </div>
+                            <div>
+                                Reviews de Jogos
+                            </div>
+                        </div>
+                    </a>
+                    <a href="#news">
+                        <div className="item pink-home">
+                            <div>
+                                <img src={searchImg} alt="sla"/>
+                            </div>
+                            <div>
+                                Notícias de Jogos
+                            </div>
+                        </div>
+                    </a>
+                </div>
             </section>
 
             <section id="news">
